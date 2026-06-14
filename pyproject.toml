@@ -1,0 +1,56 @@
+[project]
+name = "kg-tutorial"
+version = "0.1.0"
+description = "12-hour tutorial: Vector RAG → Graph RAG → Agentic Hybrid Reasoning, with corporate KYC + UBO as the worked example"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    # Core LLM
+    "anthropic>=0.40.0",
+    # Embeddings (local, no API)
+    "sentence-transformers>=3.0.0",
+    # Vector store (embedded, no server)
+    "chromadb>=0.5.0",
+    # Graph DB driver
+    "neo4j>=5.20.0",
+    # Agent framework
+    "langgraph>=0.2.0",
+    "langchain-anthropic>=0.2.0",
+    "langchain-core>=0.3.0",
+    # Data / NER baseline
+    "pandas>=2.2.0",
+    "pydantic>=2.5.0",
+    "faker>=24.0.0",
+    "spacy>=3.7.0",
+    # Lexical retrieval baseline
+    "rank-bm25>=0.2.2",
+    # Notebooks
+    "jupyter>=1.0.0",
+    "ipywidgets>=8.0.0",
+    "rich>=13.0.0",
+    # Eval
+    "scikit-learn>=1.4.0",
+    # Visualization
+    "matplotlib>=3.8.0",
+    "networkx>=3.2.0",
+    "pyvis>=0.3.2",
+    # Env
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.5.0",
+    "pytest>=8.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["kg_tutorial"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

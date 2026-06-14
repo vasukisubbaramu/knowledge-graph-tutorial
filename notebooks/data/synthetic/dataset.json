@@ -1,0 +1,1298 @@
+{
+  "persons": [
+    {
+      "id": "p_john_q_public",
+      "full_name": "John Q. Public",
+      "aliases": [
+        "J. Q. Public",
+        "Johnny Public"
+      ],
+      "date_of_birth": "1978-04-12",
+      "nationalities": [
+        "GB"
+      ],
+      "residence_country": "MC",
+      "is_pep": true,
+      "pep_reason": "Nephew of Alice Public, Member of Parliament since 2019. Classified as PEP-relative under FATF Rec. 12 by our policy.",
+      "sanctions_flag": false,
+      "notes": "UBO of ACME Holdings; director of Atlas Wirecorp."
+    },
+    {
+      "id": "p_alice_public",
+      "full_name": "Alice Public, MP",
+      "aliases": [
+        "The Hon. Alice Public"
+      ],
+      "date_of_birth": "1952-09-30",
+      "nationalities": [
+        "GB"
+      ],
+      "residence_country": "GB",
+      "is_pep": true,
+      "pep_reason": "Member of Parliament, House of Commons (sitting).",
+      "sanctions_flag": false,
+      "notes": "Aunt of John Q. Public. Not herself implicated."
+    },
+    {
+      "id": "p_maria_rossi",
+      "full_name": "Maria Rossi",
+      "aliases": [],
+      "date_of_birth": "1985-01-22",
+      "nationalities": [
+        "IT"
+      ],
+      "residence_country": "LI",
+      "is_pep": false,
+      "pep_reason": null,
+      "sanctions_flag": false,
+      "notes": "Local director of Gamma Operations GmbH. Nominee per LI registry."
+    },
+    {
+      "id": "p_tomas_velasco",
+      "full_name": "Tomás Velasco",
+      "aliases": [
+        "Tom Velasco",
+        "T. Velasco"
+      ],
+      "date_of_birth": "1970-11-05",
+      "nationalities": [
+        "PA"
+      ],
+      "residence_country": "PA",
+      "is_pep": false,
+      "pep_reason": null,
+      "sanctions_flag": false,
+      "notes": "Director of AlphaBeta Trading SA. Director of 14 other Panamanian SPVs."
+    },
+    {
+      "id": "p_noise_000",
+      "full_name": "Allison Hill",
+      "aliases": [],
+      "date_of_birth": "1959-07-02",
+      "nationalities": [
+        "FI"
+      ],
+      "residence_country": "FR",
+      "is_pep": false,
+      "pep_reason": null,
+      "sanctions_flag": false,
+      "notes": null
+    },
+    {
+      "id": "p_noise_001",
+      "full_name": "Megan Mcclain",
+      "aliases": [],
+      "date_of_birth": "1952-02-21",
+      "nationalities": [
+        "DE"
+      ],
+      "residence_country": "SE",
+      "is_pep": false,
+      "pep_reason": null,
+      "sanctions_flag": false,
+      "notes": null
+    },
+    {
+      "id": "p_noise_002",
+      "full_name": "Allen Robinson",
+      "aliases": [],
+      "date_of_birth": "1974-09-26",
+      "nationalities": [
+        "NL"
+      ],
+      "residence_country": "IT",
+      "is_pep": false,
+      "pep_reason": null,
+      "sanctions_flag": false,
+      "notes": null
+    },
+    {
+      "id": "p_noise_003",
+      "full_name": "Cristian Santos",
+      "aliases": [],
+      "date_of_birth": "1976-11-15",
+      "nationalities": [
+        "IT"
+      ],
+      "residence_country": "ES",
+      "is_pep": false,
+      "pep_reason": null,
+      "sanctions_flag": false,
+      "notes": null
+    },
+    {
+      "id": "p_noise_004",
+      "full_name": "Kevin Pacheco",
+      "aliases": [],
+      "date_of_birth": "1947-10-19",
+      "nationalities": [
+        "SE"
+      ],
+      "residence_country": "FR",
+      "is_pep": false,
+      "pep_reason": null,
+      "sanctions_flag": false,
+      "notes": null
+    },
+    {
+      "id": "p_noise_005",
+      "full_name": "Melissa Peterson",
+      "aliases": [],
+      "date_of_birth": "1955-11-04",
+      "nationalities": [
+        "FI"
+      ],
+      "residence_country": "SE",
+      "is_pep": false,
+      "pep_reason": null,
+      "sanctions_flag": false,
+      "notes": null
+    },
+    {
+      "id": "p_noise_006",
+      "full_name": "Gabrielle Davis",
+      "aliases": [],
+      "date_of_birth": "1952-09-01",
+      "nationalities": [
+        "PT"
+      ],
+      "residence_country": "FR",
+      "is_pep": false,
+      "pep_reason": null,
+      "sanctions_flag": false,
+      "notes": null
+    },
+    {
+      "id": "p_noise_007",
+      "full_name": "Lindsey Roman",
+      "aliases": [],
+      "date_of_birth": "1986-11-08",
+      "nationalities": [
+        "AT"
+      ],
+      "residence_country": "IE",
+      "is_pep": false,
+      "pep_reason": null,
+      "sanctions_flag": false,
+      "notes": null
+    },
+    {
+      "id": "p_noise_008",
+      "full_name": "Valerie Gray",
+      "aliases": [],
+      "date_of_birth": "1977-04-04",
+      "nationalities": [
+        "DE"
+      ],
+      "residence_country": "DE",
+      "is_pep": false,
+      "pep_reason": null,
+      "sanctions_flag": false,
+      "notes": null
+    },
+    {
+      "id": "p_noise_009",
+      "full_name": "Lisa Hensley",
+      "aliases": [],
+      "date_of_birth": "1978-08-16",
+      "nationalities": [
+        "FR"
+      ],
+      "residence_country": "IT",
+      "is_pep": false,
+      "pep_reason": null,
+      "sanctions_flag": false,
+      "notes": null
+    },
+    {
+      "id": "p_noise_010",
+      "full_name": "Amber Perez",
+      "aliases": [],
+      "date_of_birth": "1963-01-27",
+      "nationalities": [
+        "IT"
+      ],
+      "residence_country": "PT",
+      "is_pep": false,
+      "pep_reason": null,
+      "sanctions_flag": false,
+      "notes": null
+    },
+    {
+      "id": "p_noise_011",
+      "full_name": "David Garcia",
+      "aliases": [],
+      "date_of_birth": "1962-06-16",
+      "nationalities": [
+        "AT"
+      ],
+      "residence_country": "DE",
+      "is_pep": false,
+      "pep_reason": null,
+      "sanctions_flag": false,
+      "notes": null
+    },
+    {
+      "id": "p_noise_012",
+      "full_name": "Holly Wood",
+      "aliases": [],
+      "date_of_birth": "1958-10-05",
+      "nationalities": [
+        "PT"
+      ],
+      "residence_country": "IT",
+      "is_pep": false,
+      "pep_reason": null,
+      "sanctions_flag": false,
+      "notes": null
+    },
+    {
+      "id": "p_noise_013",
+      "full_name": "Timothy Wong",
+      "aliases": [],
+      "date_of_birth": "1980-05-04",
+      "nationalities": [
+        "SE"
+      ],
+      "residence_country": "FI",
+      "is_pep": false,
+      "pep_reason": null,
+      "sanctions_flag": false,
+      "notes": null
+    },
+    {
+      "id": "p_noise_014",
+      "full_name": "Nicholas Martin",
+      "aliases": [],
+      "date_of_birth": "1967-12-09",
+      "nationalities": [
+        "SE"
+      ],
+      "residence_country": "PT",
+      "is_pep": false,
+      "pep_reason": null,
+      "sanctions_flag": false,
+      "notes": null
+    },
+    {
+      "id": "p_noise_015",
+      "full_name": "Margaret Hawkins DDS",
+      "aliases": [],
+      "date_of_birth": "1992-12-17",
+      "nationalities": [
+        "IE"
+      ],
+      "residence_country": "IT",
+      "is_pep": false,
+      "pep_reason": null,
+      "sanctions_flag": false,
+      "notes": null
+    }
+  ],
+  "entities": [
+    {
+      "id": "e_gamma_ops",
+      "legal_name": "Gamma Operations GmbH",
+      "aliases": [
+        "Gamma Ops",
+        "Gamma GmbH"
+      ],
+      "entity_type": "GmbH",
+      "jurisdiction": "LI",
+      "registration_number": "FL-0002.123.456-7",
+      "incorporation_date": "2021-03-15",
+      "registered_address": "Lettstrasse 32, 9490 Vaduz, Liechtenstein",
+      "sic_codes": [
+        "7011"
+      ],
+      "status": "active",
+      "notes": "Applicant entity. Stated purpose: 'consulting and trading in industrial commodities.'"
+    },
+    {
+      "id": "e_alphabeta_trading",
+      "legal_name": "AlphaBeta Trading SA",
+      "aliases": [],
+      "entity_type": "SA",
+      "jurisdiction": "PA",
+      "registration_number": "2018-543-PA",
+      "incorporation_date": "2018-06-01",
+      "registered_address": "MMG Tower, Avenida Paseo del Mar, Panama City",
+      "sic_codes": [
+        "5099"
+      ],
+      "status": "active",
+      "notes": "Panamanian SA. Owns 75% of Gamma Operations."
+    },
+    {
+      "id": "e_acme_holdings",
+      "legal_name": "ACME Holdings Ltd",
+      "aliases": [
+        "ACME Holdings",
+        "Acme Hldgs"
+      ],
+      "entity_type": "SPV",
+      "jurisdiction": "KY",
+      "registration_number": "CY-329910",
+      "incorporation_date": "2015-11-09",
+      "registered_address": "P.O. Box 309, Ugland House, Grand Cayman, KY1-1104",
+      "sic_codes": [
+        "7011"
+      ],
+      "status": "active",
+      "notes": "Cayman SPV. Owns 100% of AlphaBeta Trading SA."
+    },
+    {
+      "id": "e_atlas_wirecorp",
+      "legal_name": "Atlas Wirecorp",
+      "aliases": [
+        "Atlas WireCorp",
+        "Atlas Wire Corp",
+        "AtlasWire"
+      ],
+      "entity_type": "Ltd",
+      "jurisdiction": "AE",
+      "registration_number": "UAE-FZE-998877",
+      "incorporation_date": "2019-02-11",
+      "registered_address": "JLT Cluster X, Dubai, UAE",
+      "sic_codes": [
+        "6199"
+      ],
+      "status": "active",
+      "notes": "Source of the inbound EUR 500K deposit. Strong-but-imperfect match to an OFAC-listed name 'Atlas Wire Corporation'."
+    },
+    {
+      "id": "e_noise_000",
+      "legal_name": "Perez Inc",
+      "aliases": [],
+      "entity_type": "SA",
+      "jurisdiction": "GB",
+      "registration_number": "GB-564139",
+      "incorporation_date": "2021-08-26",
+      "registered_address": "7242 Julie Plain Suite 969, Coxberg, NY 65187",
+      "sic_codes": [
+        "4690"
+      ],
+      "status": "active",
+      "notes": null
+    },
+    {
+      "id": "e_noise_001",
+      "legal_name": "Campos Inc",
+      "aliases": [],
+      "entity_type": "LLC",
+      "jurisdiction": "DK",
+      "registration_number": "DK-226916",
+      "incorporation_date": "2012-04-02",
+      "registered_address": "Unit 8480 Box 1845, DPO AE 38970",
+      "sic_codes": [
+        "7011"
+      ],
+      "status": "active",
+      "notes": null
+    },
+    {
+      "id": "e_noise_002",
+      "legal_name": "Moore-Smith",
+      "aliases": [],
+      "entity_type": "Ltd",
+      "jurisdiction": "SE",
+      "registration_number": "SE-482814",
+      "incorporation_date": "2020-12-28",
+      "registered_address": "52880 Burns Creek, Natashaport, IA 08093",
+      "sic_codes": [
+        "4690"
+      ],
+      "status": "active",
+      "notes": null
+    },
+    {
+      "id": "e_noise_003",
+      "legal_name": "Humphrey Inc",
+      "aliases": [],
+      "entity_type": "PLC",
+      "jurisdiction": "NL",
+      "registration_number": "NL-171822",
+      "incorporation_date": "2017-07-15",
+      "registered_address": "USNS Baker, FPO AP 55962",
+      "sic_codes": [
+        "7011"
+      ],
+      "status": "active",
+      "notes": null
+    },
+    {
+      "id": "e_noise_004",
+      "legal_name": "Hickman Ltd",
+      "aliases": [],
+      "entity_type": "GmbH",
+      "jurisdiction": "DK",
+      "registration_number": "DK-346578",
+      "incorporation_date": "2013-07-30",
+      "registered_address": "0983 Adrian Station, East Carloston, VI 43810",
+      "sic_codes": [
+        "6201"
+      ],
+      "status": "active",
+      "notes": null
+    },
+    {
+      "id": "e_noise_005",
+      "legal_name": "Palmer LLC",
+      "aliases": [],
+      "entity_type": "Ltd",
+      "jurisdiction": "FR",
+      "registration_number": "FR-738299",
+      "incorporation_date": "2013-12-24",
+      "registered_address": "11656 Owens Stream Apt. 106, Laurenville, IA 25613",
+      "sic_codes": [
+        "6201"
+      ],
+      "status": "active",
+      "notes": null
+    },
+    {
+      "id": "e_noise_006",
+      "legal_name": "Herrera and Sons",
+      "aliases": [],
+      "entity_type": "GmbH",
+      "jurisdiction": "BE",
+      "registration_number": "BE-624731",
+      "incorporation_date": "2013-06-02",
+      "registered_address": "80132 Tucker Forest, Barreraburgh, MS 00783",
+      "sic_codes": [
+        "8121"
+      ],
+      "status": "active",
+      "notes": null
+    },
+    {
+      "id": "e_noise_007",
+      "legal_name": "Baker-Bowers",
+      "aliases": [],
+      "entity_type": "LLC",
+      "jurisdiction": "NL",
+      "registration_number": "NL-746872",
+      "incorporation_date": "2008-08-10",
+      "registered_address": "805 Brendan Neck, North Susan, CO 24857",
+      "sic_codes": [
+        "4789"
+      ],
+      "status": "active",
+      "notes": null
+    }
+  ],
+  "controls": [
+    {
+      "id": "c_john_owns_acme",
+      "controller_id": "p_john_q_public",
+      "controlled_id": "e_acme_holdings",
+      "control_type": "UBO",
+      "ownership_pct": 50.0,
+      "effective_from": "2015-11-09",
+      "effective_to": null,
+      "source": "CDD-form:section-4"
+    },
+    {
+      "id": "c_acme_owns_alphabeta",
+      "controller_id": "e_acme_holdings",
+      "controlled_id": "e_alphabeta_trading",
+      "control_type": "Parent",
+      "ownership_pct": 100.0,
+      "effective_from": "2018-06-01",
+      "effective_to": null,
+      "source": "registry:Panama"
+    },
+    {
+      "id": "c_alphabeta_owns_gamma",
+      "controller_id": "e_alphabeta_trading",
+      "controlled_id": "e_gamma_ops",
+      "control_type": "Parent",
+      "ownership_pct": 75.0,
+      "effective_from": "2021-03-15",
+      "effective_to": null,
+      "source": "registry:Liechtenstein"
+    },
+    {
+      "id": "c_maria_directs_gamma",
+      "controller_id": "p_maria_rossi",
+      "controlled_id": "e_gamma_ops",
+      "control_type": "Director",
+      "ownership_pct": null,
+      "effective_from": "2021-03-15",
+      "effective_to": null,
+      "source": "registry:Liechtenstein"
+    },
+    {
+      "id": "c_tomas_directs_alphabeta",
+      "controller_id": "p_tomas_velasco",
+      "controlled_id": "e_alphabeta_trading",
+      "control_type": "Director",
+      "ownership_pct": null,
+      "effective_from": "2018-06-01",
+      "effective_to": null,
+      "source": "registry:Panama"
+    },
+    {
+      "id": "c_john_directs_atlas",
+      "controller_id": "p_john_q_public",
+      "controlled_id": "e_atlas_wirecorp",
+      "control_type": "Director",
+      "ownership_pct": null,
+      "effective_from": "2019-02-11",
+      "effective_to": null,
+      "source": "UAE-FZA-registry"
+    }
+  ],
+  "accounts": [
+    {
+      "id": "a_gamma_001",
+      "account_number": "LI98 0880 0000 0294 4717 2",
+      "account_type": "Current",
+      "holder_entity_id": "e_gamma_ops",
+      "authorized_signatory_ids": [
+        "p_maria_rossi",
+        "p_john_q_public"
+      ],
+      "open_date": "2026-05-30",
+      "status": "pending",
+      "currency": "EUR"
+    }
+  ],
+  "deposits": [
+    {
+      "id": "dep_001",
+      "account_id": "a_gamma_001",
+      "amount_eur": 500000.0,
+      "original_amount": 500000.0,
+      "original_currency": "EUR",
+      "value_date": "2026-06-03",
+      "counterparty_name": "ATLAS WIRECORP",
+      "counterparty_country": "AE",
+      "purpose_code": "INTC",
+      "narrative": "Intercompany treasury transfer, ref. ALPHA-2026-Q2"
+    },
+    {
+      "id": "dep_noise_000",
+      "account_id": "a_gamma_001",
+      "amount_eur": 41144.65,
+      "original_amount": 73037.45,
+      "original_currency": "USD",
+      "value_date": "2026-06-04",
+      "counterparty_name": "LARSON LTD",
+      "counterparty_country": "FR",
+      "purpose_code": "INTC",
+      "narrative": "Payment ref LMC-36193"
+    },
+    {
+      "id": "dep_noise_001",
+      "account_id": "a_gamma_001",
+      "amount_eur": 62546.54,
+      "original_amount": 47151.94,
+      "original_currency": "USD",
+      "value_date": "2026-06-04",
+      "counterparty_name": "MILLER, SANDOVAL AND CUNNINGHAM",
+      "counterparty_country": "AT",
+      "purpose_code": "SERV",
+      "narrative": "Payment ref QZI-54353"
+    },
+    {
+      "id": "dep_noise_002",
+      "account_id": "a_gamma_001",
+      "amount_eur": 53433.74,
+      "original_amount": 5345.18,
+      "original_currency": "EUR",
+      "value_date": "2026-06-05",
+      "counterparty_name": "BREWER, BRYANT AND HICKMAN",
+      "counterparty_country": "DK",
+      "purpose_code": "INTC",
+      "narrative": "Payment ref GEI-10799"
+    },
+    {
+      "id": "dep_noise_003",
+      "account_id": "a_gamma_001",
+      "amount_eur": 73921.17,
+      "original_amount": 64438.19,
+      "original_currency": "EUR",
+      "value_date": "2026-06-05",
+      "counterparty_name": "WAGNER AND SONS",
+      "counterparty_country": "IE",
+      "purpose_code": "INTC",
+      "narrative": "Payment ref KCI-51354"
+    },
+    {
+      "id": "dep_noise_004",
+      "account_id": "a_gamma_001",
+      "amount_eur": 35098.95,
+      "original_amount": 62890.06,
+      "original_currency": "EUR",
+      "value_date": "2026-06-06",
+      "counterparty_name": "TURNER, RIGGS AND ROMAN",
+      "counterparty_country": "BE",
+      "purpose_code": "INTC",
+      "narrative": "Payment ref IQH-80841"
+    },
+    {
+      "id": "dep_noise_005",
+      "account_id": "a_gamma_001",
+      "amount_eur": 17294.01,
+      "original_amount": 21489.38,
+      "original_currency": "CHF",
+      "value_date": "2026-06-06",
+      "counterparty_name": "NEWTON AND SONS",
+      "counterparty_country": "FI",
+      "purpose_code": "GDDS",
+      "narrative": "Payment ref NRO-44935"
+    },
+    {
+      "id": "dep_noise_006",
+      "account_id": "a_gamma_001",
+      "amount_eur": 46466.56,
+      "original_amount": 14493.12,
+      "original_currency": "CHF",
+      "value_date": "2026-06-07",
+      "counterparty_name": "WAGNER-KING",
+      "counterparty_country": "IT",
+      "purpose_code": "SERV",
+      "narrative": "Payment ref AVX-01640"
+    },
+    {
+      "id": "dep_noise_007",
+      "account_id": "a_gamma_001",
+      "amount_eur": 35745.0,
+      "original_amount": 21706.19,
+      "original_currency": "CHF",
+      "value_date": "2026-06-07",
+      "counterparty_name": "WALSH LLC",
+      "counterparty_country": "SE",
+      "purpose_code": "SERV",
+      "narrative": "Payment ref AHE-27868"
+    },
+    {
+      "id": "dep_noise_008",
+      "account_id": "a_gamma_001",
+      "amount_eur": 51976.84,
+      "original_amount": 63528.19,
+      "original_currency": "EUR",
+      "value_date": "2026-06-08",
+      "counterparty_name": "MCKEE, GARDNER AND DAVENPORT",
+      "counterparty_country": "IT",
+      "purpose_code": "GDDS",
+      "narrative": "Payment ref CTX-98262"
+    },
+    {
+      "id": "dep_noise_009",
+      "account_id": "a_gamma_001",
+      "amount_eur": 60768.34,
+      "original_amount": 31285.03,
+      "original_currency": "EUR",
+      "value_date": "2026-06-08",
+      "counterparty_name": "NOLAN AND SONS",
+      "counterparty_country": "IT",
+      "purpose_code": "INTC",
+      "narrative": "Payment ref NVJ-31586"
+    },
+    {
+      "id": "dep_noise_010",
+      "account_id": "a_gamma_001",
+      "amount_eur": 17521.74,
+      "original_amount": 38443.88,
+      "original_currency": "CHF",
+      "value_date": "2026-06-09",
+      "counterparty_name": "HANCOCK AND SONS",
+      "counterparty_country": "GB",
+      "purpose_code": "SERV",
+      "narrative": "Payment ref ZQV-60256"
+    },
+    {
+      "id": "dep_noise_011",
+      "account_id": "a_gamma_001",
+      "amount_eur": 21336.25,
+      "original_amount": 20003.81,
+      "original_currency": "CHF",
+      "value_date": "2026-06-09",
+      "counterparty_name": "ADAMS LTD",
+      "counterparty_country": "PT",
+      "purpose_code": "INTC",
+      "narrative": "Payment ref MDW-16073"
+    },
+    {
+      "id": "dep_noise_012",
+      "account_id": "a_gamma_001",
+      "amount_eur": 56532.01,
+      "original_amount": 33275.67,
+      "original_currency": "CHF",
+      "value_date": "2026-06-10",
+      "counterparty_name": "HOOVER-SAVAGE",
+      "counterparty_country": "IE",
+      "purpose_code": "INTC",
+      "narrative": "Payment ref REX-30365"
+    },
+    {
+      "id": "dep_noise_013",
+      "account_id": "a_gamma_001",
+      "amount_eur": 18010.42,
+      "original_amount": 74820.25,
+      "original_currency": "CHF",
+      "value_date": "2026-06-10",
+      "counterparty_name": "BELL-HICKS",
+      "counterparty_country": "GB",
+      "purpose_code": "GDDS",
+      "narrative": "Payment ref LLQ-85014"
+    },
+    {
+      "id": "dep_noise_014",
+      "account_id": "a_gamma_001",
+      "amount_eur": 57172.1,
+      "original_amount": 64860.51,
+      "original_currency": "EUR",
+      "value_date": "2026-06-11",
+      "counterparty_name": "RODRIGUEZ GROUP",
+      "counterparty_country": "FI",
+      "purpose_code": "SERV",
+      "narrative": "Payment ref HYK-55698"
+    },
+    {
+      "id": "dep_noise_015",
+      "account_id": "a_gamma_001",
+      "amount_eur": 59821.79,
+      "original_amount": 32817.68,
+      "original_currency": "EUR",
+      "value_date": "2026-06-11",
+      "counterparty_name": "SCOTT LTD",
+      "counterparty_country": "IE",
+      "purpose_code": "DIVI",
+      "narrative": "Payment ref XBE-60883"
+    },
+    {
+      "id": "dep_noise_016",
+      "account_id": "a_gamma_001",
+      "amount_eur": 45499.86,
+      "original_amount": 36167.64,
+      "original_currency": "USD",
+      "value_date": "2026-06-12",
+      "counterparty_name": "MCCALL, HANSON AND ALVARADO",
+      "counterparty_country": "PT",
+      "purpose_code": "GDDS",
+      "narrative": "Payment ref UZS-14846"
+    },
+    {
+      "id": "dep_noise_017",
+      "account_id": "a_gamma_001",
+      "amount_eur": 51660.69,
+      "original_amount": 10362.28,
+      "original_currency": "CHF",
+      "value_date": "2026-06-12",
+      "counterparty_name": "SPENCER-LEE",
+      "counterparty_country": "DK",
+      "purpose_code": "INTC",
+      "narrative": "Payment ref ZJA-62994"
+    },
+    {
+      "id": "dep_noise_018",
+      "account_id": "a_gamma_001",
+      "amount_eur": 58107.71,
+      "original_amount": 26832.81,
+      "original_currency": "USD",
+      "value_date": "2026-06-13",
+      "counterparty_name": "MITCHELL-JORDAN",
+      "counterparty_country": "IE",
+      "purpose_code": "SERV",
+      "narrative": "Payment ref CRN-99577"
+    },
+    {
+      "id": "dep_noise_019",
+      "account_id": "a_gamma_001",
+      "amount_eur": 35121.83,
+      "original_amount": 71628.56,
+      "original_currency": "CHF",
+      "value_date": "2026-06-13",
+      "counterparty_name": "KENNEDY, SANTANA AND FLYNN",
+      "counterparty_country": "NL",
+      "purpose_code": "SERV",
+      "narrative": "Payment ref VFW-21489"
+    },
+    {
+      "id": "dep_noise_020",
+      "account_id": "a_gamma_001",
+      "amount_eur": 39060.76,
+      "original_amount": 9767.99,
+      "original_currency": "CHF",
+      "value_date": "2026-06-14",
+      "counterparty_name": "CHAMBERS AND SONS",
+      "counterparty_country": "NL",
+      "purpose_code": "SERV",
+      "narrative": "Payment ref ENX-32003"
+    },
+    {
+      "id": "dep_noise_021",
+      "account_id": "a_gamma_001",
+      "amount_eur": 13157.27,
+      "original_amount": 57663.29,
+      "original_currency": "CHF",
+      "value_date": "2026-06-14",
+      "counterparty_name": "GIBSON LTD",
+      "counterparty_country": "DK",
+      "purpose_code": "GDDS",
+      "narrative": "Payment ref PJP-93676"
+    },
+    {
+      "id": "dep_noise_022",
+      "account_id": "a_gamma_001",
+      "amount_eur": 45722.95,
+      "original_amount": 37668.22,
+      "original_currency": "EUR",
+      "value_date": "2026-06-15",
+      "counterparty_name": "SMITH, POTTER AND CARRILLO",
+      "counterparty_country": "BE",
+      "purpose_code": "INTC",
+      "narrative": "Payment ref DDJ-16328"
+    },
+    {
+      "id": "dep_noise_023",
+      "account_id": "a_gamma_001",
+      "amount_eur": 19480.02,
+      "original_amount": 19583.63,
+      "original_currency": "CHF",
+      "value_date": "2026-06-15",
+      "counterparty_name": "LOWERY INC",
+      "counterparty_country": "FR",
+      "purpose_code": "GDDS",
+      "narrative": "Payment ref MUW-72788"
+    },
+    {
+      "id": "dep_noise_024",
+      "account_id": "a_gamma_001",
+      "amount_eur": 55429.25,
+      "original_amount": 61569.7,
+      "original_currency": "CHF",
+      "value_date": "2026-06-16",
+      "counterparty_name": "SALAZAR-BALL",
+      "counterparty_country": "DK",
+      "purpose_code": "SERV",
+      "narrative": "Payment ref VEC-86872"
+    },
+    {
+      "id": "dep_noise_025",
+      "account_id": "a_gamma_001",
+      "amount_eur": 11372.58,
+      "original_amount": 36695.61,
+      "original_currency": "CHF",
+      "value_date": "2026-06-16",
+      "counterparty_name": "WALTON-LARSEN",
+      "counterparty_country": "ES",
+      "purpose_code": "INTC",
+      "narrative": "Payment ref CET-48734"
+    },
+    {
+      "id": "dep_noise_026",
+      "account_id": "a_gamma_001",
+      "amount_eur": 40520.19,
+      "original_amount": 46281.36,
+      "original_currency": "EUR",
+      "value_date": "2026-06-17",
+      "counterparty_name": "YOUNG-ROGERS",
+      "counterparty_country": "PT",
+      "purpose_code": "SERV",
+      "narrative": "Payment ref YSJ-81223"
+    },
+    {
+      "id": "dep_noise_027",
+      "account_id": "a_gamma_001",
+      "amount_eur": 54045.28,
+      "original_amount": 31126.44,
+      "original_currency": "CHF",
+      "value_date": "2026-06-17",
+      "counterparty_name": "LEWIS, PERRY AND RIVERA",
+      "counterparty_country": "FI",
+      "purpose_code": "INTC",
+      "narrative": "Payment ref YXL-76036"
+    },
+    {
+      "id": "dep_noise_028",
+      "account_id": "a_gamma_001",
+      "amount_eur": 33981.31,
+      "original_amount": 39783.04,
+      "original_currency": "EUR",
+      "value_date": "2026-06-18",
+      "counterparty_name": "SMITH, GILMORE AND JOHNSTON",
+      "counterparty_country": "IT",
+      "purpose_code": "SERV",
+      "narrative": "Payment ref AIV-70546"
+    },
+    {
+      "id": "dep_noise_029",
+      "account_id": "a_gamma_001",
+      "amount_eur": 6673.89,
+      "original_amount": 3535.5,
+      "original_currency": "CHF",
+      "value_date": "2026-06-18",
+      "counterparty_name": "PAYNE, MORRISON AND WALKER",
+      "counterparty_country": "IT",
+      "purpose_code": "SERV",
+      "narrative": "Payment ref YVQ-34670"
+    }
+  ],
+  "sanctions": [
+    {
+      "id": "s_atlas",
+      "list_source": "OFAC",
+      "name": "ATLAS WIRE CORPORATION",
+      "aliases": [
+        "Atlas Wire Co.",
+        "Atlas Wire Corp.",
+        "Атлас Уайр"
+      ],
+      "listed_date": "2024-07-15",
+      "country": "AE",
+      "reason": "Designated under Executive Order 13224 for providing material support to a designated terrorist financing network."
+    },
+    {
+      "id": "s_noise_000",
+      "list_source": "OFAC",
+      "name": "YATES, RAMSEY AND PITTMAN",
+      "aliases": [],
+      "listed_date": "2025-05-10",
+      "country": "BY",
+      "reason": "Designated under Executive Order 13224 for material support to a terrorist organization."
+    },
+    {
+      "id": "s_noise_001",
+      "list_source": "UN",
+      "name": "FERGUSON, MEADOWS AND VARGAS",
+      "aliases": [],
+      "listed_date": "2023-04-22",
+      "country": "RU",
+      "reason": "Designated for grand corruption and human rights abuses."
+    },
+    {
+      "id": "s_noise_002",
+      "list_source": "OFAC",
+      "name": "DAY AND SONS",
+      "aliases": [
+        "WHITE-GREEN",
+        "LEWIS-MURPHY"
+      ],
+      "listed_date": "2024-02-03",
+      "country": "IR",
+      "reason": "Designated for grand corruption and human rights abuses."
+    },
+    {
+      "id": "s_noise_003",
+      "list_source": "UK_HMT",
+      "name": "RAMIREZ-BEAN",
+      "aliases": [],
+      "listed_date": "2021-05-16",
+      "country": "MM",
+      "reason": "Sanctioned for proliferation financing."
+    },
+    {
+      "id": "s_noise_004",
+      "list_source": "UK_HMT",
+      "name": "RUIZ LTD",
+      "aliases": [],
+      "listed_date": "2022-04-26",
+      "country": "SY",
+      "reason": "Subject to sectoral sanctions for activities in the energy sector."
+    },
+    {
+      "id": "s_noise_005",
+      "list_source": "UN",
+      "name": "WALKER-JONES",
+      "aliases": [],
+      "listed_date": "2025-08-29",
+      "country": "RU",
+      "reason": "Subject to sectoral sanctions for activities in the energy sector."
+    },
+    {
+      "id": "s_noise_006",
+      "list_source": "EU",
+      "name": "WEBSTER AND SONS",
+      "aliases": [
+        "COMBS PLC"
+      ],
+      "listed_date": "2019-03-22",
+      "country": "SY",
+      "reason": "Subject to sectoral sanctions for activities in the energy sector."
+    },
+    {
+      "id": "s_noise_007",
+      "list_source": "OFAC",
+      "name": "WELLS INC",
+      "aliases": [
+        "GOULD, MARSHALL AND SCOTT",
+        "JACKSON-LAWSON"
+      ],
+      "listed_date": "2023-12-26",
+      "country": "BY",
+      "reason": "Designated under Executive Order 13224 for material support to a terrorist organization."
+    },
+    {
+      "id": "s_noise_008",
+      "list_source": "OFAC",
+      "name": "STRICKLAND AND SONS",
+      "aliases": [
+        "RODRIGUEZ-JOHNSON"
+      ],
+      "listed_date": "2020-06-30",
+      "country": "BY",
+      "reason": "Designated for grand corruption and human rights abuses."
+    },
+    {
+      "id": "s_noise_009",
+      "list_source": "OFAC",
+      "name": "ODONNELL, BROOKS AND DAVID",
+      "aliases": [],
+      "listed_date": "2019-08-03",
+      "country": "IR",
+      "reason": "Sanctioned for proliferation financing."
+    },
+    {
+      "id": "s_noise_010",
+      "list_source": "UK_HMT",
+      "name": "VAUGHN, BURTON AND GARCIA",
+      "aliases": [],
+      "listed_date": "2024-03-07",
+      "country": "SY",
+      "reason": "Sanctioned for proliferation financing."
+    },
+    {
+      "id": "s_noise_011",
+      "list_source": "EU",
+      "name": "BURKE, MARTINEZ AND RIGGS",
+      "aliases": [
+        "REED GROUP"
+      ],
+      "listed_date": "2023-04-17",
+      "country": "IR",
+      "reason": "Designated under Executive Order 13224 for material support to a terrorist organization."
+    },
+    {
+      "id": "s_noise_012",
+      "list_source": "UK_HMT",
+      "name": "HUNTER LLC",
+      "aliases": [
+        "ATKINSON GROUP",
+        "HAMILTON LLC"
+      ],
+      "listed_date": "2023-02-01",
+      "country": "RU",
+      "reason": "Designated under Executive Order 13224 for material support to a terrorist organization."
+    },
+    {
+      "id": "s_noise_013",
+      "list_source": "OFAC",
+      "name": "ZIMMERMAN-GRAHAM",
+      "aliases": [],
+      "listed_date": "2023-11-15",
+      "country": "IR",
+      "reason": "Sanctioned for proliferation financing."
+    },
+    {
+      "id": "s_noise_014",
+      "list_source": "UK_HMT",
+      "name": "NELSON, MORTON AND MEDINA",
+      "aliases": [
+        "MARSHALL-PETERSEN"
+      ],
+      "listed_date": "2022-09-28",
+      "country": "SY",
+      "reason": "Sanctioned for proliferation financing."
+    },
+    {
+      "id": "s_noise_015",
+      "list_source": "UK_HMT",
+      "name": "CHRISTIAN-RIVAS",
+      "aliases": [],
+      "listed_date": "2018-09-11",
+      "country": "IR",
+      "reason": "Subject to sectoral sanctions for activities in the energy sector."
+    },
+    {
+      "id": "s_noise_016",
+      "list_source": "OFAC",
+      "name": "SANCHEZ-MARSHALL",
+      "aliases": [
+        "BARNETT, ROGERS AND SNYDER"
+      ],
+      "listed_date": "2020-08-07",
+      "country": "KP",
+      "reason": "Subject to sectoral sanctions for activities in the energy sector."
+    },
+    {
+      "id": "s_noise_017",
+      "list_source": "EU",
+      "name": "LEWIS-SALINAS",
+      "aliases": [
+        "RAMIREZ-CARLSON"
+      ],
+      "listed_date": "2025-01-15",
+      "country": "BY",
+      "reason": "Subject to sectoral sanctions for activities in the energy sector."
+    },
+    {
+      "id": "s_noise_018",
+      "list_source": "UN",
+      "name": "SMITH, VAUGHAN AND MILLER",
+      "aliases": [],
+      "listed_date": "2023-10-06",
+      "country": "KP",
+      "reason": "Sanctioned for proliferation financing."
+    },
+    {
+      "id": "s_noise_019",
+      "list_source": "OFAC",
+      "name": "PETERS-ALLEN",
+      "aliases": [
+        "BREWER-HENRY",
+        "DAVIS AND SONS"
+      ],
+      "listed_date": "2021-03-27",
+      "country": "BY",
+      "reason": "Designated under Executive Order 13224 for material support to a terrorist organization."
+    },
+    {
+      "id": "s_noise_020",
+      "list_source": "EU",
+      "name": "TORRES PLC",
+      "aliases": [],
+      "listed_date": "2020-12-14",
+      "country": "RU",
+      "reason": "Subject to sectoral sanctions for activities in the energy sector."
+    },
+    {
+      "id": "s_noise_021",
+      "list_source": "UN",
+      "name": "SCHMIDT, COLEMAN AND REESE",
+      "aliases": [],
+      "listed_date": "2020-08-24",
+      "country": "MM",
+      "reason": "Designated under Executive Order 13224 for material support to a terrorist organization."
+    },
+    {
+      "id": "s_noise_022",
+      "list_source": "UN",
+      "name": "CHAVEZ, PARKER AND HALL",
+      "aliases": [],
+      "listed_date": "2023-10-09",
+      "country": "MM",
+      "reason": "Designated under Executive Order 13224 for material support to a terrorist organization."
+    },
+    {
+      "id": "s_noise_023",
+      "list_source": "UN",
+      "name": "WILSON-HERRERA",
+      "aliases": [
+        "LOPEZ, ROBINSON AND WASHINGTON"
+      ],
+      "listed_date": "2023-10-19",
+      "country": "RU",
+      "reason": "Sanctioned for proliferation financing."
+    }
+  ],
+  "adverse_media": [
+    {
+      "id": "am_offshore_clipping_2024",
+      "headline": "Offshore vehicles for British wealth",
+      "snippet": "ACME Holdings Ltd, a Cayman SPV held via Ugland House, is reported by sources familiar with the matter to be principally owned by Mr John Q. Public, a British national resident in Monaco. Mr Public is a nephew of sitting MP Alice Public.",
+      "published_date": "2024-10-08",
+      "source_outlet": "The Financial Examiner",
+      "mentioned_ids": [
+        "p_john_q_public",
+        "e_acme_holdings"
+      ],
+      "topics": [
+        "offshore-structures",
+        "PEP-relative"
+      ],
+      "sentiment": "negative"
+    },
+    {
+      "id": "am_panama_directors_2022",
+      "headline": "Panama nominees: directors with hundreds of mandates",
+      "snippet": "Among the names appearing on more than 12 corporate boards in Panama, Tomás Velasco was identified as director of fourteen vehicles linked through ACME Holdings of Cayman.",
+      "published_date": "2022-04-30",
+      "source_outlet": "Latin Investigative Network",
+      "mentioned_ids": [
+        "p_tomas_velasco",
+        "e_acme_holdings"
+      ],
+      "topics": [
+        "nominee-directorship"
+      ],
+      "sentiment": "mixed"
+    }
+  ],
+  "documents": [
+    {
+      "id": "d_cdd_gamma_ops",
+      "title": "Customer Due Diligence Form — Gamma Operations GmbH",
+      "doc_type": "cdd_form",
+      "body": "CUSTOMER DUE DILIGENCE FORM\nReference: CDD-2026-04417\nDate: 20 May 2026\n\nSection 1 — Applicant entity\n    Legal name: Gamma Operations GmbH\n    Type: Gesellschaft mit beschränkter Haftung\n    Jurisdiction of incorporation: Liechtenstein\n    Registered office: Lettstrasse 32, 9490 Vaduz\n    Stated business activity: \"Consulting and trading in industrial commodities.\"\n    Date of incorporation: 15 March 2021\n\nSection 2 — Local director\n    Name: Maria Rossi\n    Nationality: Italian\n    Address: c/o registered office\n    Status: Nominee director per Liechtenstein registry.\n\nSection 3 — Direct shareholders\n    AlphaBeta Trading SA (Panama) holds 75% of issued share capital.\n    Remaining 25% held by undisclosed minority shareholders (\"treasury\").\n\nSection 4 — Ultimate beneficial ownership\n    Client states that the ultimate beneficial owner above the 25% threshold\n    is Mr John Q. Public, a British national resident in Monaco, holding 50%\n    of ACME Holdings Ltd (Cayman Islands), the 100% parent of AlphaBeta\n    Trading SA.\n\nSection 5 — Source of funds\n    The opening deposit (anticipated EUR 500,000) is described as\n    \"operational treasury transfer from group affiliate.\" No supporting\n    invoice or contract was provided.\n\nSection 6 — Anticipated activity\n    Inbound: EUR 1–5 million per year, multiple counterparties.\n    Outbound: payments to \"industrial suppliers in Asia and the Middle East.\"\n\nSection 7 — Risk factors observed\n    - Multi-jurisdictional ownership chain (LI → PA → KY).\n    - UBO resides in Monaco (high-net-worth jurisdiction).\n    - Group operates in UAE through a related entity (Atlas Wirecorp).\n    - No commercial track record at the operating-company level.\n",
+      "mentioned_ids": [
+        "e_gamma_ops",
+        "e_alphabeta_trading",
+        "e_acme_holdings",
+        "p_john_q_public",
+        "p_maria_rossi"
+      ],
+      "created_date": "2026-05-20"
+    },
+    {
+      "id": "d_rm_memo",
+      "title": "RM Memo — Project Lotus introduction",
+      "doc_type": "rm_memo",
+      "body": "MEMO\nFrom: K. Andersson, Senior Relationship Manager\nTo: Onboarding Committee\nRe: Project Lotus — proposed onboarding of Gamma Operations GmbH\n\nI am introducing Gamma Operations GmbH, a Liechtenstein vehicle whose\ngroup I have known since 2019 through a mutual contact in Monaco. The UBO,\nMr John Q. Public, is a discreet British investor with significant private\nwealth and a long track record in commodity trading. He prefers not to be\nvisible on European registers and uses the Cayman ACME Holdings structure\nfor this purpose.\n\nMr Public has indicated that ANNUAL deposit volumes through the new account\nwill reach EUR 5 million in year one, growing thereafter. He has expressed\nmild irritation at the volume of documentation requested in earlier stages\nand asked that the onboarding be expedited if at all possible.\n\nThere is no adverse information of which I am aware. I recommend approval\nsubject to standard enhanced due diligence for the multi-jurisdictional\nownership chain.\n",
+      "mentioned_ids": [
+        "e_gamma_ops",
+        "p_john_q_public"
+      ],
+      "created_date": "2026-05-18"
+    },
+    {
+      "id": "d_sof_questionnaire",
+      "title": "Source of Funds Questionnaire — Atlas Wirecorp deposit",
+      "doc_type": "sof_questionnaire",
+      "body": "SOURCE OF FUNDS QUESTIONNAIRE\nReference: SOF-2026-04417-A\nAccount: Gamma Operations GmbH (a_gamma_001)\nTransaction: Inbound wire EUR 500,000, value date 03 June 2026\nOriginating party (as stated in SWIFT MT103): \"ATLAS WIRECORP\"\nOriginating country: AE\n\nClient response to question \"What is the economic purpose of this transfer?\"\n    \"Inter-company funding for working capital. Atlas Wirecorp is a UAE\n    affiliate within the same beneficial-owner group.\"\n\nClient response to question \"Please describe the commercial relationship\nbetween the originator and beneficiary.\"\n    \"Both entities are ultimately controlled by Mr John Q. Public via ACME\n    Holdings. Atlas Wirecorp provides treasury services to the group.\"\n\nNo invoice, contract, or board resolution was provided in support of this\ntransfer.\n",
+      "mentioned_ids": [
+        "e_gamma_ops",
+        "e_atlas_wirecorp"
+      ],
+      "created_date": "2026-06-02"
+    },
+    {
+      "id": "d_policy_pep",
+      "title": "Internal Policy — Politically Exposed Persons (excerpt)",
+      "doc_type": "policy",
+      "body": "INTERNAL POLICY — POLITICALLY EXPOSED PERSONS (excerpt)\n\n3.2 Scope of \"close associate\" and \"family member\"\nA \"family member\" of a PEP, for the purpose of this policy, includes:\n  (a) spouses and partners;\n  (b) children and their spouses or partners;\n  (c) parents;\n  (d) siblings;\n  (e) nephews and nieces — see note below.\n\nNote on (e): While FATF Recommendation 12 does not strictly require coverage\nof nephews and nieces, this Bank's policy elects to treat them as PEP-\nrelatives, subject to enhanced due diligence (EDD), where the underlying\nPEP is currently sitting in a national legislature.\n\n3.3 Required EDD measures for PEPs and PEP-relatives\n  - Senior management sign-off on onboarding;\n  - Establishment and ongoing review of source of wealth (NOT only source of\n    funds);\n  - Enhanced monitoring of transactions for a minimum of 12 months.\n",
+      "mentioned_ids": [],
+      "created_date": "2025-01-15"
+    },
+    {
+      "id": "d_policy_sanctions",
+      "title": "Internal Policy — Sanctions screening tolerance",
+      "doc_type": "policy",
+      "body": "INTERNAL POLICY — SANCTIONS SCREENING TOLERANCE\n\nThe Bank screens all counterparties against OFAC, UN, EU and UK HM Treasury\nconsolidated lists at the following points:\n  (a) at onboarding;\n  (b) on every value-date for inbound and outbound transactions over\n      EUR 10,000;\n  (c) overnight, against the full customer book, on every list refresh.\n\nTolerance: Fuzzy name matches with a score >= 85 must be escalated to L2\nSanctions Operations regardless of any local context arguments. Strict\nmatches (score 100) trigger an immediate hold pending investigation.\n\nParticular attention is required where any of the following are present:\n  - the originator's spelling appears slightly altered from the list entry\n    (e.g. trailing 'Corporation' vs 'Corp');\n  - the country of incorporation aligns with the listed entity;\n  - a beneficial owner of the counterparty is shared with the customer.\n\nIt is NOT acceptable to dismiss a fuzzy match on the basis that the local\nbusiness unit is comfortable with the customer.\n",
+      "mentioned_ids": [],
+      "created_date": "2024-11-01"
+    },
+    {
+      "id": "d_news_offshore",
+      "title": "News clipping — 'Offshore vehicles for British wealth' (2024)",
+      "doc_type": "news_clipping",
+      "body": "[The Financial Examiner, 8 October 2024]\n\nOFFSHORE VEHICLES FOR BRITISH WEALTH\n\nAmong the structures examined by this paper in connection with the recent\nleak of Cayman registry data is ACME Holdings Ltd, a Cayman SPV held via\nUgland House. ACME's principal owner is reported by sources familiar with\nthe matter to be Mr John Q. Public, a British national long resident in\nMonaco. ACME holds a Panamanian subsidiary, AlphaBeta Trading SA, which in\nturn holds operating companies in Liechtenstein and the UAE.\n\nMr Public is a nephew of the sitting MP Alice Public; he has not been the\nsubject of any criminal proceedings. A representative for Mr Public declined\nto comment for this article.\n",
+      "mentioned_ids": [
+        "p_john_q_public",
+        "e_acme_holdings"
+      ],
+      "created_date": "2024-10-08"
+    },
+    {
+      "id": "d_regulatory_ubo",
+      "title": "Regulatory guidance — UBO disclosure under 6MLD",
+      "doc_type": "regulatory_guidance",
+      "body": "REGULATORY GUIDANCE — ULTIMATE BENEFICIAL OWNERSHIP UNDER 6MLD\n\nA beneficial owner is any natural person who ultimately owns or controls\nthe customer, whether directly or indirectly. Where ownership is structured\nthrough a chain of legal entities, the obliged entity must trace the\nownership chain to its terminating natural person(s).\n\nA 25% (twenty-five percent) ownership threshold is indicative but not\nexhaustive: control may exist below the 25% threshold by virtue of\ncontractual arrangements, voting rights, or veto power.\n\nThe obliged entity must document the steps taken to verify ownership chains\nspanning multiple jurisdictions, and must independently verify the\ndeclaration where possible — for example, by consulting the relevant\nbeneficial ownership register in each jurisdiction of incorporation. Where\nno such register exists or the register is not accessible, the obliged\nentity must record this fact and apply enhanced ongoing monitoring.\n",
+      "mentioned_ids": [],
+      "created_date": "2023-12-01"
+    }
+  ]
+}

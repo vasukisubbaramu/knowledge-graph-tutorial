@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Corporate KYC + UBO — A Primer for the Control-Manager Platform Tutorial</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root {
+    --fg: #1a1a1a;
+    --muted: #555;
+    --rule: #d8d8d8;
+    --accent: #1f4e79;
+    --box: #f3f5f7;
+    --box-rule: #d0d6dc;
+    --warn: #fff7e6;
+    --warn-rule: #d9b566;
+  }
+  html { font-size: 17px; }
+  body {
+    max-width: 760px;
+    margin: 2.5rem auto;
+    padding: 0 1.25rem;
+    color: var(--fg);
+    font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    line-height: 1.6;
+    background: #fdfdfd;
+  }
+  h1, h2, h3, h4 {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    color: var(--accent);
+    line-height: 1.25;
+  }
+  h1 { font-size: 1.75rem; margin: 0 0 0.25rem; }
+  h2 { font-size: 1.25rem; border-bottom: 1px solid var(--rule); padding-bottom: 0.3rem; margin-top: 2.25rem; }
+  h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+  h4 { font-size: 1.0rem; color: var(--fg); }
+  p { margin: 0.7rem 0; }
+  ul, ol { padding-left: 1.4rem; }
+  li { margin: 0.35rem 0; }
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1rem 0;
+    padding: 0.1rem 0 0.1rem 1rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+  code, .mono {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.9rem;
+    background: var(--box);
+    padding: 0 0.25rem;
+    border-radius: 3px;
+  }
+  .lede {
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin: 0.5rem 0 1.5rem;
+  }
+  .box {
+    background: var(--box);
+    border: 1px solid var(--box-rule);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+  }
+  .warn {
+    background: var(--warn);
+    border: 1px solid var(--warn-rule);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+  }
+  .box h4, .warn h4 { margin: 0 0 0.4rem 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+  }
+  th, td {
+    text-align: left;
+    border-bottom: 1px solid var(--rule);
+    padding: 0.5rem 0.6rem;
+    vertical-align: top;
+  }
+  th { background: var(--box); font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+  nav.toc {
+    border: 1px solid var(--box-rule);
+    background: var(--box);
+    padding: 0.6rem 1rem;
+    margin: 1rem 0 2rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+  }
+  nav.toc ol { padding-left: 1.4rem; margin: 0.3rem 0; }
+  nav.toc li { margin: 0.15rem 0; }
+  .meta { color: var(--muted); font-size: 0.9rem; }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
+  dl.glossary dt {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 0.7rem;
+  }
+  dl.glossary dd { margin: 0.15rem 0 0 0; padding-left: 0; color: var(--fg); }
+</style>
+</head>
+<body>
+
+<h1>Corporate KYC + UBO</h1>
+<p class="lede">A primer for the control-manager platform tutorial. Roughly 20 minutes to read. The goal is to give you enough of the domain vocabulary that every later hour reads naturally.</p>
+<p class="meta">Read once at the start. Skim again before Hour 4 (when the KG ontology is designed) and Hour 11 (when the end-to-end agent is built).</p>
+
+<nav class="toc">
+<strong>Contents</strong>
+<ol>
+  <li><a href="#why">Why this domain at all</a></li>
+  <li><a href="#kyc-cdd-edd">KYC, CDD, EDD — three letters that aren't the same</a></li>
+  <li><a href="#corporate">Why "corporate" KYC is harder than retail</a></li>
+  <li><a href="#ubo">Ultimate Beneficial Ownership and the 25% threshold</a></li>
+  <li><a href="#pep">Politically Exposed Persons and PEP-relatives</a></li>
+  <li><a href="#sanctions">Sanctions screening and the alias problem</a></li>
+  <li><a href="#sof-sow">Source of Funds vs Source of Wealth</a></li>
+  <li><a href="#control-manager">What a control manager actually does</a></li>
+  <li><a href="#lotus">How this connects to the Lotus case</a></li>
+  <li><a href="#glossary">Glossary</a></li>
+  <li><a href="#further">Further reading (canonical sources)</a></li>
+</ol>
+</nav>
+
+<!-- ===================================================================== -->
+<h2 id="why">1. Why this domain at all</h2>
+
+<p>Banks are legally obliged to know who their customers are, what they do, and where their money comes from. The legal obligation has a name in every jurisdiction — <em>Anti-Money Laundering (AML)</em> in the US under the Bank Secrecy Act, <em>6MLD</em> in the EU, <em>MAS Notice 626</em> in Singapore, and so on — but the underlying expectation is the same:</p>
+
+<blockquote>The bank must not become an unwitting (or witting) vehicle for laundering criminal proceeds, financing terrorism, or evading sanctions. To prevent that, the bank must perform due diligence at onboarding, refresh it periodically, and monitor activity for anomalies on an ongoing basis.</blockquote>
+
+<p>The work splits across three "lines of defence." <strong>First line</strong> is the front office (relationship managers, onboarding teams). They <em>do</em> the diligence. <strong>Second line</strong> is compliance, financial-crime control, and the control-manager function — the audience for the platform you are building. They <em>review</em> the diligence the first line produced, ask the awkward questions, decide what gets escalated, and own the policy. <strong>Third line</strong> is internal audit, which checks that the other two lines did their jobs.</p>
+
+<p>The control manager's job is consequential. A missed sanctions match becomes a regulatory fine; a missed PEP becomes a press story; a missed source-of-funds question becomes a money-laundering enforcement action. The job is also <em>structurally hard</em>: the information needed to make the right call is scattered across documents, registries, sanctions lists, news, and internal memos, and is sometimes deliberately obscured by the customer.</p>
+
+<p>This is exactly the kind of problem retrieval-augmented architectures were built for — and exactly the kind of problem that exposes what each generation of those architectures can and cannot do.</p>
+
+<!-- ===================================================================== -->
+<h2 id="kyc-cdd-edd">2. KYC, CDD, EDD — three letters that aren't the same</h2>
+
+<p>These three acronyms get used interchangeably in marketing and almost-never interchangeably by control managers. Hold the distinctions:</p>
+
+<table>
+<thead><tr><th>Term</th><th>What it means</th><th>When it applies</th></tr></thead>
+<tbody>
+<tr>
+  <td><strong>KYC</strong> — Know Your Customer</td>
+  <td>The umbrella concept: a bank must <em>know</em> who it is doing business with.</td>
+  <td>Always. It's the policy frame, not a specific procedure.</td>
+</tr>
+<tr>
+  <td><strong>CDD</strong> — Customer Due Diligence</td>
+  <td>The standard set of checks every customer goes through: identity, address, business activity, beneficial ownership, expected activity.</td>
+  <td>Every customer, every time.</td>
+</tr>
+<tr>
+  <td><strong>EDD</strong> — Enhanced Due Diligence</td>
+  <td>A heavier set of checks reserved for higher-risk customers: source of wealth, senior management sign-off, deeper ownership verification, enhanced monitoring.</td>
+  <td>PEPs, high-risk jurisdictions, complex ownership structures, certain industries.</td>
+</tr>
+<tr>
+  <td><strong>SDD</strong> — Simplified Due Diligence</td>
+  <td>A lighter set, where the law permits, for very low-risk customers.</td>
+  <td>Listed companies on major exchanges, regulated financial institutions in low-risk jurisdictions, etc.</td>
+</tr>
+</tbody>
+</table>
+
+<p>The Lotus case in the tutorial is unambiguously an <strong>EDD case</strong>, for at least three reasons that should be jumping off the page by the end of Hour 4: the ownership chain spans three jurisdictions including two offshore centres; the UBO is a PEP-relative; and the incoming wire is from a UAE counterparty with an alias-mismatched OFAC entry.</p>
+
+<!-- ===================================================================== -->
+<h2 id="corporate">3. Why "corporate" KYC is harder than retail</h2>
+
+<p>Retail KYC is, roughly: <em>verify the identity of one human, check them against sanctions and PEP lists, decide.</em> Corporate KYC has the same outer shape but a different inside.</p>
+
+<p>The corporate customer is itself a legal fiction — a company, a partnership, a trust, a foundation — and the question "who is the customer?" decomposes into many sub-questions:</p>
+
+<ul>
+  <li>Who are the <em>directors</em>? (Operational control.)</li>
+  <li>Who are the <em>shareholders</em>? Most jurisdictions require disclosure of shareholders above some threshold, but not all do, and nominee structures are legal in many.</li>
+  <li>Who are the <em>ultimate beneficial owners</em>? This is the natural-person <em>at the bottom of the ownership chain</em> — the one who actually controls or benefits.</li>
+  <li>Who has <em>signatory authority</em> on the bank account?</li>
+  <li>Who has <em>powers of attorney</em>?</li>
+  <li>What is the <em>group structure</em>? (Subsidiaries, holding companies, sister entities.)</li>
+</ul>
+
+<p>Each of these is a separate fact, often in a separate document, often in a separate jurisdiction. The control manager's job is to compose them.</p>
+
+<div class="box">
+<h4>Why this is structurally a graph problem</h4>
+<p>Notice that every question above is fundamentally <em>relational</em>: it asks about a node (the customer) by walking edges (controls, owns, is-director-of, has-signatory) to other nodes (persons, entities, accounts). The reason Gen 2 architectures even exist in this domain is that the underlying data model the regulator is asking about <em>is a graph</em>. Hour 4 makes this precise.</p>
+</div>
+
+<!-- ===================================================================== -->
+<h2 id="ubo">4. Ultimate Beneficial Ownership and the 25% threshold</h2>
+
+<p>An <strong>Ultimate Beneficial Owner (UBO)</strong> is the natural person who, at the end of any chain of ownership or control, ultimately owns or controls the customer. The concept exists because if banks only had to identify the <em>direct</em> owner — which can itself be a company in an opaque jurisdiction — the entire AML framework would be trivially defeated by adding one more layer.</p>
+
+<p>Most modern AML regimes use a <strong>25% threshold</strong> as the indicative line: any natural person who, directly or indirectly, owns more than 25% of the equity (or controls more than 25% of voting rights) of a customer is a UBO and must be identified, verified, and risk-rated.</p>
+
+<div class="warn">
+<h4>The 25% threshold is indicative, not exhaustive</h4>
+<p>This is the single most-misunderstood point in operational KYC. The 25% line does not mean "below 25% you can ignore." Control may exist <em>without</em> 25% ownership — through contractual arrangements, vetoes, dual-class share structures, voting trusts, or other mechanisms. The UK 6MLD guidance is explicit on this; FATF Recommendation 10 reinforces it. A control manager who declines to identify a 24%-shareholder-with-veto-rights as a UBO because "we use 25% as our threshold" is making a defensible-sounding but operationally wrong call.</p>
+</div>
+
+<h3>The ownership chain</h3>
+
+<p>Where the customer is owned through a chain of legal entities, the obliged entity must trace the chain to its terminating natural person(s). Walking the chain is a multi-hop relational operation:</p>
+
+<pre style="background: var(--box); padding: 0.8rem; border-radius: 4px; font-size: 0.85rem; overflow-x: auto;">
+Customer (Gamma Operations GmbH)
+   ├── owned 75% by ──> AlphaBeta Trading SA (Panama)
+   │                       └── owned 100% by ──> ACME Holdings Ltd (Cayman)
+   │                                                 └── owned 50% by ──> John Q. Public (natural person, UBO)
+   └── 25% in "treasury" / undisclosed minorities — flagged for follow-up
+</pre>
+
+<p>Each edge in this chain is a separate fact that must be independently verified against a jurisdictional registry (or its absence noted and compensated for by enhanced monitoring). The bank that just reads the CDD form and trusts the customer's declaration has not done UBO due diligence — it has done UBO data entry.</p>
+
+<h3>Why offshore matters</h3>
+
+<p>Several jurisdictions — historically the Cayman Islands, the British Virgin Islands, Panama, the Marshall Islands, Liechtenstein, and others — have legal frameworks under which the public registry of beneficial owners is either non-existent or inaccessible. (Many of these regimes have been reformed in the last decade under FATF pressure, but the historical structures persist.) When a chain runs through such a jurisdiction, the bank cannot independently verify the declared ownership and must compensate with enhanced monitoring and corroboration from other sources (adverse media, third-party databases, the customer's own internal documentation).</p>
+
+<!-- ===================================================================== -->
+<h2 id="pep">5. Politically Exposed Persons and PEP-relatives</h2>
+
+<p>A <strong>Politically Exposed Person (PEP)</strong> is, broadly, a natural person who currently holds — or has historically held — a prominent public function. The category exists because PEPs face elevated risks of involvement in bribery, corruption, and embezzlement, and because their public exposure increases the bank's reputational risk.</p>
+
+<p>FATF Recommendation 12 sets out the international standard. Most jurisdictions implement it with some variation. PEPs split into three broad classes:</p>
+
+<ul>
+  <li><strong>Domestic PEPs.</strong> Heads of state, members of parliament, senior judiciary, senior military, etc., of <em>this</em> jurisdiction.</li>
+  <li><strong>Foreign PEPs.</strong> The same roles in <em>other</em> jurisdictions.</li>
+  <li><strong>International organisation PEPs.</strong> Senior officials of intergovernmental organisations (UN, IMF, World Bank, etc.).</li>
+</ul>
+
+<p>For all three classes, PEP status extends — by policy in most banks, by law in some — to <strong>family members</strong> and <strong>close associates</strong>. The exact definitions vary; the tutorial's Lotus policy is illustrative:</p>
+
+<blockquote>
+A family member of a PEP includes spouses and partners, children and their spouses or partners, parents, siblings, and <em>nephews and nieces, where the underlying PEP is currently sitting in a national legislature</em>.
+</blockquote>
+
+<p>The nephew clause matters: John Q. Public is the nephew of a sitting MP. Without that clause he would be a regular high-net-worth individual; with it he is a PEP-relative requiring EDD. <strong>The fact that triggers the policy is not in the CDD form. It is in the policy document.</strong> No naive retrieval system that pulls "John Q. Public" from one document will surface the policy paragraph that classifies him. This is part of why Gen 1 retrieval is insufficient for control-manager work.</p>
+
+<!-- ===================================================================== -->
+<h2 id="sanctions">6. Sanctions screening and the alias problem</h2>
+
+<p>The bank screens every counterparty — at onboarding, on every value-date for material transactions, and overnight across the full book on every list refresh — against a set of consolidated sanctions lists. The most commonly referenced are:</p>
+
+<ul>
+  <li><strong>OFAC SDN</strong> — the US Treasury's Specially Designated Nationals list.</li>
+  <li><strong>UN Consolidated List</strong> — the UN Security Council's sanctions list.</li>
+  <li><strong>EU Consolidated List</strong> — the European Union's restrictive measures list.</li>
+  <li><strong>UK HMT</strong> — the UK's HM Treasury sanctions list (post-Brexit equivalent of the EU list).</li>
+</ul>
+
+<p>A "hit" against a sanctions list is a regulated event. Strict (100% name match) hits trigger an immediate hold. The interesting problem in production is <em>fuzzy</em> matching: the name on the wire is rarely identical to the name as listed.</p>
+
+<div class="box">
+<h4>The five reasons sanctions screening is fundamentally a fuzzy problem</h4>
+<ol>
+  <li><strong>Transliteration.</strong> "Атлас Уайр" → "Atlas Wire", "Atlas Wair", "Atlas Vire."</li>
+  <li><strong>Translation.</strong> "Sociedad Anónima" vs "SA" vs "Société Anonyme."</li>
+  <li><strong>Truncation.</strong> SWIFT message fields cap at 35 characters; long names get chopped.</li>
+  <li><strong>Word order.</strong> "Mohammad Ali" vs "Ali, Mohammad."</li>
+  <li><strong>Deliberate obfuscation.</strong> A sanctioned actor can rebrand subtly. "Atlas Wire Corporation" → "Atlas Wirecorp."</li>
+</ol>
+</div>
+
+<p>The Lotus case is built around the deliberate-obfuscation case. The deposit narrative says <code>ATLAS WIRECORP</code>; OFAC says <code>ATLAS WIRE CORPORATION</code>. A character-by-character match returns 0% similarity. A naive vector embedding of two short strings is noisy. A capable fuzzy matcher (Jaro-Winkler, token-set ratio, or LLM-based) should score this above the bank's 85% escalation threshold. Hour 7 implements this.</p>
+
+<h3>Why this is structurally a Gen 3 problem</h3>
+
+<p>Gen 1 retrieval finds the OFAC entry as a similar-looking <em>text chunk</em>, but it never <em>matches</em> against the deposit narrative. Gen 2 retrieval traverses the graph — but Cypher's <code>=</code> operator only finds exact matches, and adding fuzzy operators to Cypher requires careful engineering. Gen 3 — the agent — invokes a dedicated <em>tool</em> ("fuzzy_name_match") that returns a score, and the agent decides whether to escalate. This is the worked example of why agents-with-tools are not a luxury.</p>
+
+<!-- ===================================================================== -->
+<h2 id="sof-sow">7. Source of Funds vs Source of Wealth</h2>
+
+<p>These two phrases sound similar and mean different things:</p>
+
+<table>
+<thead><tr><th>Term</th><th>Question it answers</th></tr></thead>
+<tbody>
+<tr>
+  <td><strong>Source of Funds (SoF)</strong></td>
+  <td>Where did <em>this specific transaction</em> come from? E.g., "EUR 500,000 inbound — what is its economic origin?"</td>
+</tr>
+<tr>
+  <td><strong>Source of Wealth (SoW)</strong></td>
+  <td>How did the customer's <em>overall wealth</em> accumulate? E.g., "John Q. Public is a UHNWI — how?"</td>
+</tr>
+</tbody>
+</table>
+
+<p>For standard customers, SoF is enough. For PEPs, PEP-relatives, and other EDD-triggering customers, the bank must establish SoW as well, because the question regulators ask after a scandal breaks is invariably "how did the bank not notice that this person didn't have legitimate income consistent with the volumes they were moving?"</p>
+
+<!-- ===================================================================== -->
+<h2 id="control-manager">8. What a control manager actually does</h2>
+
+<p>The audience for the platform is the <strong>control manager</strong> — a second-line risk-and-compliance professional. The role's daily reality (which the platform must respect):</p>
+
+<ul>
+  <li>They handle <strong>volume</strong>. A typical control manager processes tens to a couple of hundred alerts a day, depending on the bank and the alert type.</li>
+  <li>They make <strong>judgement calls under ambiguity</strong>. The interesting cases are the ambiguous ones; the unambiguous ones are auto-decisioned.</li>
+  <li>They produce <strong>auditable decisions</strong>. Every decision must have a rationale, citations to the underlying evidence, and a clear policy mapping. Regulators audit the work, sometimes years after the fact.</li>
+  <li>They are <strong>accountable</strong>. If a decision turns out to be wrong, the individual control manager is named in internal reviews and sometimes externally.</li>
+</ul>
+
+<div class="box">
+<h4>What the platform must therefore deliver</h4>
+<ol>
+  <li><strong>Speed.</strong> A 60-second wait per case is fine. A 10-minute wait is not.</li>
+  <li><strong>Citations.</strong> Every claim made by the platform must point to its source — a document, a registry record, a list entry, a transaction. No "trust me, I'm a model."</li>
+  <li><strong>Reasoning trace.</strong> The platform must show its work — what it considered, what it ruled out, why it concluded what it concluded.</li>
+  <li><strong>Confidence calibration.</strong> "High confidence in this UBO chain; medium confidence in the sanctions match; low confidence in the source-of-funds rationale" is more useful than a single overall number.</li>
+  <li><strong>Hand-off.</strong> The platform must support clean hand-off to the human for the genuinely ambiguous cases.</li>
+</ol>
+</div>
+
+<p>Hour 11 ties all five of these requirements to specific agent design decisions. Hour 12 makes them measurable.</p>
+
+<!-- ===================================================================== -->
+<h2 id="lotus">9. How this connects to the Lotus case</h2>
+
+<p>The Lotus case in the tutorial is designed to be both <em>realistic</em> and <em>pathological</em>. Realistic enough to feel like the kind of thing a control manager actually sees; pathological enough that no single generation of architecture handles it cleanly.</p>
+
+<p>Map every feature of the case back to the domain concepts in this primer:</p>
+
+<table>
+<thead><tr><th>Lotus feature</th><th>KYC/UBO concept it exercises</th></tr></thead>
+<tbody>
+<tr>
+  <td>Three-level ownership: Cayman → Panama → Liechtenstein</td>
+  <td>Multi-jurisdictional UBO chain. Tests the bank's ability to trace.</td>
+</tr>
+<tr>
+  <td>50% UBO at top — clearly above threshold</td>
+  <td>Unambiguous UBO identification (the easy bit).</td>
+</tr>
+<tr>
+  <td>25% in "treasury / undisclosed minorities"</td>
+  <td>The opaque tail. Should trigger follow-up; usually doesn't.</td>
+</tr>
+<tr>
+  <td>UBO is nephew of sitting MP</td>
+  <td>PEP-relative trigger. Policy lookup required to even classify.</td>
+</tr>
+<tr>
+  <td>UBO is also director of the deposit's originator</td>
+  <td>Cross-link only visible if you compose facts across documents.</td>
+</tr>
+<tr>
+  <td>Inbound EUR 500,000 wire, no invoice/contract</td>
+  <td>Source-of-Funds question; missing supporting evidence.</td>
+</tr>
+<tr>
+  <td>Originator's name in wire ≠ OFAC name exactly</td>
+  <td>Fuzzy sanctions match above policy's 85% threshold.</td>
+</tr>
+<tr>
+  <td>RM memo pushing for "expedited" onboarding</td>
+  <td>Pressure from first line — a classic control-manager test.</td>
+</tr>
+<tr>
+  <td>Adverse media (2024) implicates the UBO</td>
+  <td>Secondary corroboration; only useful if surfaced.</td>
+</tr>
+</tbody>
+</table>
+
+<p>By Hour 12, you should be able to answer — out loud, with citations — why each of these is or is not a deal-breaker, and which architectural mode (Gen 1 / 2 / 3) most efficiently surfaces it.</p>
+
+<!-- ===================================================================== -->
+<h2 id="glossary">10. Glossary</h2>
+
+<dl class="glossary">
+<dt>AML</dt><dd>Anti-Money Laundering. The legal and operational framework for preventing illicit funds from entering the financial system.</dd>
+<dt>BSA</dt><dd>Bank Secrecy Act (US, 1970). The foundational US AML statute.</dd>
+<dt>CDD</dt><dd>Customer Due Diligence. The standard onboarding-and-monitoring checks for every customer.</dd>
+<dt>CFT</dt><dd>Combating the Financing of Terrorism. Often paired with AML: "AML/CFT."</dd>
+<dt>EDD</dt><dd>Enhanced Due Diligence. Heavier checks for higher-risk customers.</dd>
+<dt>FATF</dt><dd>Financial Action Task Force. The intergovernmental body that sets the international AML/CFT standards via its 40 Recommendations.</dd>
+<dt>FinCEN</dt><dd>Financial Crimes Enforcement Network. The US Treasury bureau that administers BSA/AML.</dd>
+<dt>FIBO</dt><dd>Financial Industry Business Ontology. A formal ontology maintained by the EDM Council; useful as a starting point when designing financial-services KGs. Referenced in Hour 4.</dd>
+<dt>KYC</dt><dd>Know Your Customer. The umbrella concept.</dd>
+<dt>MLD / 6MLD</dt><dd>(Sixth) EU Anti-Money Laundering Directive. The current EU framework.</dd>
+<dt>OFAC</dt><dd>Office of Foreign Assets Control (US Treasury). Administers US sanctions; maintains the SDN list.</dd>
+<dt>PEP</dt><dd>Politically Exposed Person. A natural person holding (or having held) a prominent public function.</dd>
+<dt>PEP-relative</dt><dd>A family member or close associate of a PEP, treated as a PEP by policy or law.</dd>
+<dt>SAR / STR</dt><dd>Suspicious Activity Report (US) / Suspicious Transaction Report (rest of world). The regulatory filing made when the bank suspects illicit activity.</dd>
+<dt>SDN</dt><dd>Specially Designated Nationals — the OFAC sanctions list.</dd>
+<dt>SDD</dt><dd>Simplified Due Diligence. Lighter checks where law permits, for very low-risk customers.</dd>
+<dt>SoF</dt><dd>Source of Funds. The origin of a specific transaction.</dd>
+<dt>SoW</dt><dd>Source of Wealth. The origin of the customer's overall wealth.</dd>
+<dt>SPV</dt><dd>Special Purpose Vehicle. A legal entity formed for a narrow purpose, often the holding of a single asset or investment.</dd>
+<dt>UBO</dt><dd>Ultimate Beneficial Owner. The natural person at the bottom of the ownership chain.</dd>
+<dt>UHNWI</dt><dd>Ultra-High-Net-Worth Individual. Definitions vary by bank; commonly USD 30M+ in investable assets.</dd>
+</dl>
+
+<!-- ===================================================================== -->
+<h2 id="further">11. Further reading (canonical sources)</h2>
+
+<p>If you want depth beyond this primer, these are the canonical sources practitioners actually use:</p>
+
+<ul>
+  <li><strong>FATF — The 40 Recommendations.</strong> The international standard. Rec 10 (CDD), Rec 12 (PEPs), Rec 22 (DNFBPs) are most relevant to this tutorial.</li>
+  <li><strong>FATF — Risk-Based Approach Guidance for the Banking Sector.</strong> Reads like a textbook.</li>
+  <li><strong>FinCEN — Customer Due Diligence Final Rule (2016, "CDD Rule").</strong> The US instantiation of UBO; established the 25% threshold for US banks.</li>
+  <li><strong>EU 6MLD (Directive 2018/1673 + 2019/879 + ...).</strong> The current EU AML framework.</li>
+  <li><strong>EDM Council — FIBO (Financial Industry Business Ontology).</strong> Free, OWL-formatted. Useful starting point for KG schema design in Hour 4.</li>
+  <li><strong>Wolfsberg Group — Various papers.</strong> Practitioner-led guidance, especially on correspondent banking, beneficial ownership, and PEPs.</li>
+</ul>
+
+<hr />
+
+<p class="meta">Return to this document any time you encounter an unfamiliar acronym in the tutorial. The reading list in Section 11 is the canonical drill-down if you want to go beyond the practitioner level.</p>
+
+</body>
+</html>
