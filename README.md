@@ -22,9 +22,9 @@ Each hour is roughly 60 minutes of dense material that takes 2–3 hours to abso
 | 1    | The retrieval problem and why Gen 1 → 3 | Framing | ready |
 | 2    | Vector RAG, hands-on | Gen 1 | ready |
 | 3    | Where Gen 1 breaks | Gen 1 → 2 transition | ready |
-| 4    | Knowledge Graph foundations | Gen 2 | planned |
-| 5    | Gen 2 — KG construction | Gen 2 | planned |
-| 6    | Gen 2 — KG querying | Gen 2 | planned |
+| 4    | Knowledge Graph foundations | Gen 2 | ready |
+| 5    | Gen 2 — KG construction | Gen 2 | ready |
+| 6    | Gen 2 — KG querying | Gen 2 | ready |
 | 7    | Gen 2 limits and hybrid retrieval | Gen 2 → 3 transition | planned |
 | 8    | Gen 3 — Agentic reasoning | Gen 3 | planned |
 | 9    | Gen 3 — Context Graphs | Gen 3 | planned |
@@ -57,33 +57,45 @@ Knowledge-Graph/
 │   ├── embed.py                    local sentence-transformers helper
 │   ├── display.py                  Rich-based pretty-print helpers
 │   ├── retrieval.py                chunking, ChromaDB, BM25, RRF, LLM rerank
+│   ├── graph.py                    NetworkX + Neo4j helpers, visualization
+│   ├── extract.py                  spaCy NER + Claude schema-guided extraction
 │   └── data/
 │       ├── schema.py               Pydantic models for the KYC domain
 │       ├── generate.py             synthetic dataset generator
 │       └── load.py                 lookup helpers
 │
 ├── data/
-│   └── synthetic/dataset.json      generated at first run (gitignored)
+│   ├── synthetic/dataset.json      generated at first run (gitignored)
+│   └── chroma_db/                  ChromaDB persistence (gitignored)
 │
 ├── notebooks/                      open these in JupyterLab or VSCode
 │   ├── hour00_setup.ipynb
 │   ├── hour01_concepts.ipynb
 │   ├── hour02_vector_rag.ipynb
-│   └── hour03_gen1_limits.ipynb
+│   ├── hour03_gen1_limits.ipynb
+│   ├── hour04_kg_foundations.ipynb
+│   ├── hour05_kg_construction.ipynb
+│   └── hour06_kg_querying.ipynb
 │
 ├── docs/
 │   ├── kyc_ubo_primer.html         domain primer for readers new to KYC + UBO
-│   ├── hour00.md                   per-hour reading companion
+│   ├── hour00.md                   per-hour reading companions
 │   ├── hour01.md
 │   ├── hour02.md
-│   └── hour03.md
+│   ├── hour03.md
+│   ├── hour04.md
+│   ├── hour05.md
+│   └── hour06.md
 │
 ├── scripts/                        notebook generators (regeneratable)
 │   ├── _nb.py                      tiny .ipynb writer
 │   ├── build_hour00.py
 │   ├── build_hour01.py
 │   ├── build_hour02.py
-│   └── build_hour03.py
+│   ├── build_hour03.py
+│   ├── build_hour04.py
+│   ├── build_hour05.py
+│   └── build_hour06.py
 │
 └── references/                     research papers cited in the docs (optional)
 ```
