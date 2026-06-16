@@ -25,12 +25,12 @@ Each hour is roughly 60 minutes of dense material that takes 2–3 hours to abso
 | 4    | Knowledge Graph foundations | Gen 2 | ready |
 | 5    | Gen 2 — KG construction | Gen 2 | ready |
 | 6    | Gen 2 — KG querying | Gen 2 | ready |
-| 7    | Gen 2 limits and hybrid retrieval | Gen 2 → 3 transition | planned |
-| 8    | Gen 3 — Agentic reasoning | Gen 3 | planned |
-| 9    | Gen 3 — Context Graphs | Gen 3 | planned |
-| 10   | Gen 3 — Hypergraphs | Gen 3 | planned |
-| 11   | End-to-end Control Manager agent | Gen 3 | planned |
-| 12   | Production, evaluation, governance | Cross-cutting | planned |
+| 7    | Gen 2 limits and hybrid retrieval | Gen 2 → 3 transition | ready |
+| 8    | Gen 3 — Agentic reasoning | Gen 3 | ready |
+| 9    | Gen 3 — Context Graphs | Gen 3 | ready |
+| 10   | Gen 3 — Hypergraphs | Gen 3 | ready |
+| 11   | End-to-end Control Manager agent | Gen 3 | ready |
+| 12   | Production, evaluation, governance | Cross-cutting | ready |
 
 Each hour delivers:
 
@@ -59,6 +59,10 @@ Knowledge-Graph/
 │   ├── retrieval.py                chunking, ChromaDB, BM25, RRF, LLM rerank
 │   ├── graph.py                    NetworkX + Neo4j helpers, visualization
 │   ├── extract.py                  spaCy NER + Claude schema-guided extraction
+│   ├── tools.py                    agent-callable tools (fuzzy match, sanctions check, KG lookups)
+│   ├── agent.py                    LangGraph agent (plan → execute → critique → finalize)
+│   ├── hyper.py                    hypergraph data structure and visualization
+│   ├── eval.py                     evaluation harness for Hour 12
 │   └── data/
 │       ├── schema.py               Pydantic models for the KYC domain
 │       ├── generate.py             synthetic dataset generator
@@ -75,7 +79,13 @@ Knowledge-Graph/
 │   ├── hour03_gen1_limits.ipynb
 │   ├── hour04_kg_foundations.ipynb
 │   ├── hour05_kg_construction.ipynb
-│   └── hour06_kg_querying.ipynb
+│   ├── hour06_kg_querying.ipynb
+│   ├── hour07_hybrid_retrieval.ipynb
+│   ├── hour08_agentic_reasoning.ipynb
+│   ├── hour09_context_graphs.ipynb
+│   ├── hour10_hypergraphs.ipynb
+│   ├── hour11_control_manager_agent.ipynb
+│   └── hour12_production_eval.ipynb
 │
 ├── docs/
 │   ├── kyc_ubo_primer.html         domain primer for readers new to KYC + UBO
@@ -85,7 +95,13 @@ Knowledge-Graph/
 │   ├── hour03.md
 │   ├── hour04.md
 │   ├── hour05.md
-│   └── hour06.md
+│   ├── hour06.md
+│   ├── hour07.md
+│   ├── hour08.md
+│   ├── hour09.md
+│   ├── hour10.md
+│   ├── hour11.md
+│   └── hour12.md
 │
 ├── scripts/                        notebook generators (regeneratable)
 │   ├── _nb.py                      tiny .ipynb writer
@@ -95,7 +111,13 @@ Knowledge-Graph/
 │   ├── build_hour03.py
 │   ├── build_hour04.py
 │   ├── build_hour05.py
-│   └── build_hour06.py
+│   ├── build_hour06.py
+│   ├── build_hour07.py
+│   ├── build_hour08.py
+│   ├── build_hour09.py
+│   ├── build_hour10.py
+│   ├── build_hour11.py
+│   └── build_hour12.py
 │
 └── references/                     research papers cited in the docs (optional)
 ```
