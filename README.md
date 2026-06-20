@@ -31,6 +31,11 @@ Each hour is roughly 60 minutes of dense material that takes 2–3 hours to abso
 | 10   | Gen 3 — Hypergraphs | Gen 3 | ready |
 | 11   | End-to-end Control Manager agent | Gen 3 | ready |
 | 12   | Production, evaluation, governance | Cross-cutting | ready |
+| 13b  | Temporal Knowledge Graphs (TIE direction) | Frontier appendix | ready |
+| 13c  | Relational Foundation Models (KumoRFM direction) | Frontier appendix | ready |
+| 13a  | KG Foundation Models (ULTRA / GAMMA direction) | Frontier appendix | ready |
+
+Hours 13a-c are *appendix* hours that signpost research-frontier directions (the four papers in `references/`) and sketch their architectural shape against the Lotus case without training the actual models. The frontier-reader doc is at `docs/reading_the_frontier.html`.
 
 Each hour delivers:
 
@@ -63,6 +68,8 @@ Knowledge-Graph/
 │   ├── agent.py                    LangGraph agent (plan → execute → critique → finalize)
 │   ├── hyper.py                    hypergraph data structure and visualization
 │   ├── eval.py                     evaluation harness for Hour 12
+│   ├── temporal.py                 bi-temporal helpers for Hour 13b (TIE direction)
+│   ├── relational_fm.py            relational-FM stand-in for Hour 13c (KumoRFM direction)
 │   └── data/
 │       ├── schema.py               Pydantic models for the KYC domain
 │       ├── generate.py             synthetic dataset generator
@@ -85,10 +92,14 @@ Knowledge-Graph/
 │   ├── hour09_context_graphs.ipynb
 │   ├── hour10_hypergraphs.ipynb
 │   ├── hour11_control_manager_agent.ipynb
-│   └── hour12_production_eval.ipynb
+│   ├── hour12_production_eval.ipynb
+│   ├── hour13b_temporal_kg.ipynb
+│   ├── hour13c_relational_fm.ipynb
+│   └── hour13a_kg_foundation_models.ipynb
 │
 ├── docs/
 │   ├── kyc_ubo_primer.html         domain primer for readers new to KYC + UBO
+│   ├── reading_the_frontier.html   frontier research map (~25 min read)
 │   ├── hour00.md                   per-hour reading companions
 │   ├── hour01.md
 │   ├── hour02.md
@@ -101,7 +112,10 @@ Knowledge-Graph/
 │   ├── hour09.md
 │   ├── hour10.md
 │   ├── hour11.md
-│   └── hour12.md
+│   ├── hour12.md
+│   ├── hour13b.md
+│   ├── hour13c.md
+│   └── hour13a.md
 │
 ├── scripts/                        notebook generators (regeneratable)
 │   ├── _nb.py                      tiny .ipynb writer
@@ -117,7 +131,10 @@ Knowledge-Graph/
 │   ├── build_hour09.py
 │   ├── build_hour10.py
 │   ├── build_hour11.py
-│   └── build_hour12.py
+│   ├── build_hour12.py
+│   ├── build_hour13b.py
+│   ├── build_hour13c.py
+│   └── build_hour13a.py
 │
 └── references/                     research papers cited in the docs (optional)
 ```

@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Reading the Frontier — what comes after Gen 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root {
+    --fg: #1a1a1a;
+    --muted: #555;
+    --rule: #d8d8d8;
+    --accent: #1f4e79;
+    --accent2: #6c4b8e;
+    --box: #f3f5f7;
+    --box-rule: #d0d6dc;
+    --warn: #fff7e6;
+    --warn-rule: #d9b566;
+    --good: #e8f4ea;
+    --good-rule: #8cb89a;
+  }
+  html { font-size: 17px; }
+  body {
+    max-width: 780px;
+    margin: 2.5rem auto;
+    padding: 0 1.25rem;
+    color: var(--fg);
+    font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    line-height: 1.6;
+    background: #fdfdfd;
+  }
+  h1, h2, h3, h4 {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    color: var(--accent);
+    line-height: 1.25;
+  }
+  h1 { font-size: 1.75rem; margin: 0 0 0.25rem; }
+  h2 { font-size: 1.25rem; border-bottom: 1px solid var(--rule); padding-bottom: 0.3rem; margin-top: 2.25rem; }
+  h3 { font-size: 1.05rem; margin-top: 1.5rem; color: var(--accent2); }
+  h4 { font-size: 1.0rem; color: var(--fg); }
+  p { margin: 0.7rem 0; }
+  ul, ol { padding-left: 1.4rem; }
+  li { margin: 0.35rem 0; }
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1rem 0;
+    padding: 0.1rem 0 0.1rem 1rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+  code, .mono {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.9rem;
+    background: var(--box);
+    padding: 0 0.25rem;
+    border-radius: 3px;
+  }
+  pre {
+    background: var(--box);
+    border: 1px solid var(--box-rule);
+    border-radius: 4px;
+    padding: 0.8rem;
+    overflow-x: auto;
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.85rem;
+  }
+  .lede {
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin: 0.5rem 0 1.5rem;
+  }
+  .box {
+    background: var(--box);
+    border: 1px solid var(--box-rule);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+  }
+  .warn {
+    background: var(--warn);
+    border: 1px solid var(--warn-rule);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+  }
+  .good {
+    background: var(--good);
+    border: 1px solid var(--good-rule);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+  }
+  .box h4, .warn h4, .good h4 { margin: 0 0 0.4rem 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+  }
+  th, td {
+    text-align: left;
+    border-bottom: 1px solid var(--rule);
+    padding: 0.5rem 0.6rem;
+    vertical-align: top;
+  }
+  th { background: var(--box); font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+  nav.toc {
+    border: 1px solid var(--box-rule);
+    background: var(--box);
+    padding: 0.6rem 1rem;
+    margin: 1rem 0 2rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+  }
+  nav.toc ol { padding-left: 1.4rem; margin: 0.3rem 0; }
+  nav.toc li { margin: 0.15rem 0; }
+  .meta { color: var(--muted); font-size: 0.9rem; }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
+  dl.glossary dt {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 0.7rem;
+  }
+  dl.glossary dd { margin: 0.15rem 0 0 0; padding-left: 0; color: var(--fg); }
+  .paper {
+    border: 1px solid var(--box-rule);
+    border-left: 4px solid var(--accent2);
+    background: #fbfbfd;
+    padding: 0.5rem 0.9rem;
+    margin: 0.7rem 0;
+    border-radius: 4px;
+    font-size: 0.93rem;
+  }
+  .paper strong { color: var(--accent2); }
+</style>
+</head>
+<body>
+
+<h1>Reading the Frontier</h1>
+<p class="lede">A practitioner-oriented map of four research directions sitting one step beyond the 12-hour tutorial. About 25 minutes to read. Designed to be read <em>after</em> Hour 12 — earlier it would not make sense, later it organises what's already in your head.</p>
+<p class="meta">Companion to: <code>notebooks/hour00..12</code> and <code>docs/kyc_ubo_primer.html</code>. Pairs with the four papers in <code>references/</code>.</p>
+
+<nav class="toc">
+<strong>Contents</strong>
+<ol>
+  <li><a href="#why">Why this document exists</a></li>
+  <li><a href="#spine">The assumption-mapping (the spine)</a></li>
+  <li><a href="#ultra">ULTRA — universal inductive KG reasoning</a></li>
+  <li><a href="#gamma">GAMMA — richer geometric representations</a></li>
+  <li><a href="#tie">TIE — temporal knowledge graphs</a></li>
+  <li><a href="#kumo">KumoRFM — the paradigm shift</a></li>
+  <li><a href="#arc">Taken together — a five-year arc</a></li>
+  <li><a href="#same">What stays the same</a></li>
+  <li><a href="#decision">A decision framework</a></li>
+  <li><a href="#reading-order">Reading order by question</a></li>
+  <li><a href="#glossary">Glossary</a></li>
+</ol>
+</nav>
+
+<!-- ===================================================================== -->
+<h2 id="why">1. Why this document exists</h2>
+
+<p>You finished the 12-hour tutorial. You built a Gen 1 vector retriever, a Gen 2 knowledge graph in Neo4j, a Gen 3 LangGraph agent with self-critique, and a routed evaluation harness. That stack is what production looks like in 2026 for regulated knowledge-retrieval platforms.</p>
+
+<p>This document maps four research directions that sit one step beyond it. Each one critiques an assumption the tutorial silently makes. None is a vendor pitch; none is a finished product. The goal is to let you read the underlying papers — already in your <code>references/</code> folder — without feeling like they're describing systems unrelated to what you just built.</p>
+
+<p>A second goal: when somebody on your team forwards you a vendor's "We built KumoRFM-style retrieval" pitch, this document is what tells you which assumption they're claiming to break, and whether that's the right break for your platform <em>today</em> or <em>three years from now</em>.</p>
+
+<div class="box">
+<h4>A note on time horizons</h4>
+<p>All four directions are research-grade as of 2026. Two of them (ULTRA, TIE) have working public implementations and reasonable production paths. One (GAMMA) is a methodological refinement on ULTRA. One (KumoRFM) is closer to a product than a paper but with significant deployment friction in regulated domains.</p>
+<p>Treat the timelines in §7 as ranges, not predictions. They reflect where the methods are now, what would have to be true for them to land in a bank, and how long that typically takes.</p>
+</div>
+
+<!-- ===================================================================== -->
+<h2 id="spine">2. The assumption-mapping (the spine)</h2>
+
+<p>The tutorial silently assumes three things. Each paper challenges one of them. Read this table; the rest of the document is footnotes on it.</p>
+
+<table>
+<thead>
+<tr><th>Tutorial assumption</th><th>Where you absorbed it</th><th>Paper that breaks it</th><th>What it changes</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td>The KG is <strong>bespoke per organization</strong> — one team designs the ontology, one team builds the extractors, one team writes the queries.</td>
+  <td>Hour 4 (ontology design); Hour 5 (extraction to that ontology); Hour 6 (Cypher against that ontology).</td>
+  <td><strong>ULTRA</strong>, <strong>GAMMA</strong></td>
+  <td>Reasoning becomes <em>transferable across schemas</em>: a pre-trained model that does inductive link prediction on any KG, with any relation vocabulary, without retraining.</td>
+</tr>
+<tr>
+  <td>KG construction is a <strong>necessary preprocessing step</strong> — relational sources are joined into a graph, then queried.</td>
+  <td>Hour 5 (the construction itself); Hour 6 (querying through Cypher).</td>
+  <td><strong>KumoRFM</strong></td>
+  <td>The architectural unit shifts from <em>query → retrieve → answer</em> to <em>tables + task → prediction</em>. The model reads relational tables directly, in-context.</td>
+</tr>
+<tr>
+  <td>The KG is <strong>schema-static</strong> — what's true today is what's queried; the platform is rebuilt or updated wholesale when reality changes.</td>
+  <td>Hour 7 (where we acknowledge but defer temporal); the schema's <code>effective_from</code> properties that we never query through.</td>
+  <td><strong>TIE</strong></td>
+  <td>Reasoning becomes <em>bi-temporal</em>: representations that encode <em>when</em> a fact was true and <em>when</em> the platform knew it, updated incrementally without catastrophic forgetting.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Those three assumptions are not wrong. They are the production reality. They are also the boundary of the production reality, and each paper points at where the boundary will move.</p>
+
+<!-- ===================================================================== -->
+<h2 id="ultra">3. ULTRA — universal inductive KG reasoning</h2>
+
+<div class="paper">
+<strong>ULTRA: Foundation Models for Knowledge Graph Reasoning.</strong>
+Galkin, Yuan, Mostafa, Tang, Zhu. ICLR 2024.
+arXiv: 2310.04562. Code: <code>github.com/DeepGraphLearning/ULTRA</code>.
+</div>
+
+<p>The traditional KG embedding (TransE, ComplEx, RotatE, and dozens of others) trains a vector representation of each entity and each relation. The model is good at the KG it was trained on and useless on any other KG, because the entity-IDs and relation-names are different.</p>
+
+<p>ULTRA's bet is that <em>relations are typed by their interactions with each other</em>, not by their names. "Owns" and "controls" might be different strings in different ontologies, but if both have the same pattern of co-occurrence with other relations (composable with directorship, antisymmetric, transitively closed), they behave the same. ULTRA represents each relation as a function of its position in the <em>relation interaction graph</em> — a graph of relations connected to relations through their meta-properties — and the resulting embeddings transfer.</p>
+
+<p>The headline result: a single pre-trained ULTRA model does inductive link prediction on 57 different KGs with arbitrary vocabularies, often beating the supervised state-of-the-art on each specific graph. Zero-shot.</p>
+
+<h3>What this changes for Lotus</h3>
+
+<p>Two concrete applications in the control-management domain. Both are well past the tutorial but become legible once you've built it.</p>
+
+<p><strong>M&A schema integration.</strong> The bank acquires another institution with its own customer KG. The acquired graph uses different relation names — <code>OWNED_BY</code> instead of <code>:CONTROLS{control_type: 'UBO'}</code>, <code>IS_DIRECTOR</code> instead of a CONTROLS-edge with a Director discriminator. Today this is a multi-month schema-mapping project. With ULTRA, the same model reasons over both graphs without retraining, because the <em>interactions</em> between relations carry the structural pattern even when the names don't.</p>
+
+<p><strong>Missing-link prediction on UBO declarations.</strong> "Given the structural pattern of this customer's declared ownership chain, predict whether a UBO declaration is incomplete." This is link prediction — exactly what ULTRA does. The clients of this prediction are the control managers: a flagged-as-incomplete customer is escalated to a deeper review. The hour-11 agent reasons about <em>declared</em> structure; an ULTRA-like model reasons about <em>plausible</em> structure.</p>
+
+<div class="warn">
+<h4>What ULTRA does not solve</h4>
+<p>ULTRA reasons about graph structure. It does not produce calibrated, citation-ready answers; it predicts the existence and confidence of an edge, not the evidence for it. For a regulated decision you still need the Gen 3 stack to attach the audit trail. ULTRA is plausibly the <em>scoring</em> layer; the agent is the <em>defensibility</em> layer.</p>
+</div>
+
+<!-- ===================================================================== -->
+<h2 id="gamma">4. GAMMA — richer geometric representations</h2>
+
+<div class="paper">
+<strong>Geometric Structural Knowledge Graph Foundation Model.</strong>
+Xin, Nayyeri, Makki Nayeri, Staab. 2025.
+</div>
+
+<p>ULTRA represents relations through a single algebraic transformation in message passing. GAMMA's observation: different kinds of relational structure are captured naturally by different algebras. Symmetric relations (partnerships) fit real-valued representations. Asymmetric ones (ownership) fit complex. Periodic (cycles, recurring patterns) fit dual-number. Hierarchical fit split-complex.</p>
+
+<p>GAMMA replaces ULTRA's single transformation with <em>multi-head geometric attention</em> across all four algebras. A learnable gating mechanism (with entropy regularisation) picks the right algebra per link. The result: 5.5% improvement in inductive MRR over ULTRA, with most of the gain on benchmarks that contain a mix of relational types.</p>
+
+<h3>The practitioner reading of GAMMA</h3>
+
+<p>GAMMA is a methodological refinement, not a paradigm shift. If you read ULTRA, you can read GAMMA in twenty minutes. Its practical contribution: <em>the geometric structure of your relations matters and should be modelled</em>. For control-management KGs — which contain a mix of symmetric (related-to), asymmetric (controls, owns), and hierarchical (parent-of, subsidiary-of) — GAMMA's multi-algebra approach is structurally well-matched.</p>
+
+<p>When somebody pitches you "KG foundation models," the difference between ULTRA and GAMMA is roughly the difference between a learned attention mechanism and a hand-tuned one. You'll see GAMMA-class methods evolve; the underlying bet — relations have geometric structure that should be modelled — is the durable insight.</p>
+
+<!-- ===================================================================== -->
+<h2 id="tie">5. TIE — temporal knowledge graphs</h2>
+
+<div class="paper">
+<strong>TIE: A Framework for Embedding-based Incremental Temporal Knowledge Graph Completion.</strong>
+Wu, Xu, Zhang, Ma, Coates, Cheung. SIGIR 2021.
+</div>
+
+<p>The tutorial honestly defers temporal reasoning. The schema has <code>effective_from</code> and <code>effective_to</code> properties on every control edge; we never query through them. Cypher does not have first-class temporal semantics. Hour 6 acknowledges this and Hour 7 says "production approximations exist; bi-temporal modelling is the right direction."</p>
+
+<p>TIE is the right direction. Its specific contribution: a framework that handles KG <em>updates</em> over time without catastrophic forgetting. The three pieces:</p>
+
+<ul>
+  <li><strong>Time-aware encoding.</strong> Each fact's embedding depends on its time. (Roughly: the model learns "John controlled ACME from 2015 onward" rather than "John controls ACME.")</li>
+  <li><strong>Experience replay.</strong> When the KG is updated with new facts, the model is trained on the new facts <em>plus a sample of old facts</em> — preventing the new training from overwriting old knowledge.</li>
+  <li><strong>Temporal regularization.</strong> A penalty on representations that drift faster than their underlying facts have changed — keeps stable concepts stable, lets unstable concepts move.</li>
+</ul>
+
+<p>The paper also introduces an <strong>intransigence metric</strong>: a measure of the model's tendency to over-preserve old knowledge. Real production systems trade off intransigence against forgetting; TIE makes the trade-off explicit.</p>
+
+<h3>What this changes for Lotus</h3>
+
+<p>The Lotus deposit lands 2026-06-03. At that moment, was Atlas Wirecorp <em>already</em> on the OFAC list? The OFAC entry's <code>listed_date</code> is 2024-07-15 — yes. But what if the listing had been added <em>after</em> the deposit? The deposit was clean at the time, even if the customer is now exposed. <strong>The current tutorial cannot answer "as of date X" questions cleanly.</strong></p>
+
+<p>Three regulatory questions a control-management platform should answer crisply and currently cannot:</p>
+
+<ol>
+  <li>"What did we know about this customer when we approved them in 2024?" (point-in-time reconstruction)</li>
+  <li>"This customer's UBO disclosure changed in 2025. Has our risk classification updated accordingly without losing the prior classification rationale?" (bi-temporal update without forgetting)</li>
+  <li>"Reconstruct the platform's reasoning for this case on the date it was decided." (auditable temporal replay)</li>
+</ol>
+
+<p>All three are TIE-shaped problems. TIE itself is one possible mechanism; the broader research direction — <em>temporal KG embeddings with incremental learning</em> — is where production approximations will increasingly live.</p>
+
+<div class="box">
+<h4>The cheaper alternative the tutorial almost did</h4>
+<p>You can encode bi-temporal facts at the <em>schema</em> level (every edge has effective_from / effective_to / known_from / known_until) and query through them with hand-written date arithmetic. This is what most production platforms do today, and it is genuinely sufficient for the majority of audit queries. TIE-class methods become valuable when the platform's behaviour must <em>itself</em> change over time — when historical reasoning needs to be reproducible at training time, not just queryable at inference time.</p>
+</div>
+
+<!-- ===================================================================== -->
+<h2 id="kumo">6. KumoRFM — the paradigm shift</h2>
+
+<div class="paper">
+<strong>KumoRFM: A Foundation Model for In-Context Learning on Relational Data.</strong>
+Fey, Kocijan, Lopez, Lenssen, Leskovec. 2025. <code>kumo.ai</code>.
+</div>
+
+<p>Of the four papers, KumoRFM is the most architecturally provocative. The other three accept the tutorial's general shape (build a KG, query the KG, reason from the KG) and propose better versions of one step. KumoRFM proposes a different shape entirely.</p>
+
+<p>The KumoRFM claim: most enterprise data is <em>relational</em>, not graph. Your customers are a table, your accounts are a table, your transactions are a table, your sanctions list is a table. You join them to produce graph-shaped questions (UBO chain, transaction flow, exposure path), but the underlying substrate is relational. KumoRFM is a foundation model that does in-context learning over those tables directly. No KG construction step. No bespoke ontology. No per-task model training.</p>
+
+<p>Architecturally:</p>
+
+<ul>
+  <li>A <strong>table-agnostic encoding scheme</strong>: any table's rows and columns are encoded into a representation the model can read.</li>
+  <li>A <strong>relational graph transformer</strong>: the model reasons across tables connected by foreign-key joins, with attention that respects table structure.</li>
+  <li><strong>In-context learning</strong>: at inference time you supply a few examples of the prediction task; the model adapts without fine-tuning.</li>
+</ul>
+
+<p>The reported results: predictions (churn, fraud, recommendation, forecasting) on arbitrary relational schemas, in under one second per query, without per-task training. The benchmark coverage is wide enough that this is plausibly real, though deployment in a regulated bank is a different question.</p>
+
+<h3>What this changes for Lotus</h3>
+
+<p>Imagine your control-management platform shifts. Today the agent in Hour 11 takes a question, plans tool calls, traverses the KG, fetches chunks, synthesises. With KumoRFM the architecture is: the bank's relational tables go in, the question goes in (with a few labeled examples), a calibrated risk score comes out in one second.</p>
+
+<div class="warn">
+<h4>What this paradigm gives up</h4>
+<p>The Gen 3 agent's reasoning trace and citation chain (Hour 11) are <em>exportable to a regulator</em>. KumoRFM-style ICL has attention-based interpretability but does not produce the same "I called <code>sanctions_check</code>, it returned ESCALATE at 93%, citing OFAC entry <code>s_atlas</code>, per policy threshold 85%" defensibility. For regulated decisions <em>this is a real cost</em>, not a transition issue that will disappear with better tooling.</p>
+</div>
+
+<h3>The honest deployment pattern: triage layer</h3>
+
+<p>The most likely production pattern is not "KumoRFM replaces the Gen 3 agent." It is <strong>KumoRFM in front of the Gen 3 agent</strong>:</p>
+
+<pre>
+incoming case
+    │
+    ▼
+KumoRFM-style relational FM
+    │ produces a calibrated risk score in &lt;1s, near-zero marginal cost
+    │
+    ├── low risk  → auto-approve with audit summary, route a sample to human review
+    └── high risk → Gen 3 agent produces full reasoning trace + citations for human reviewer
+</pre>
+
+<p>The relational FM handles volume; the Gen 3 agent handles defensibility. This is the same routing pattern as Hour 12 (Gen 1 / Gen 2 / Gen 3) but with one more tier: a Gen 4 tier in front of the others, doing high-throughput triage.</p>
+
+<p>Reading KumoRFM in this frame, rather than as a Gen 3 replacement, is the practitioner-honest take.</p>
+
+<!-- ===================================================================== -->
+<h2 id="arc">7. Taken together — a five-year arc</h2>
+
+<p>If you accept the framing in §2 — each paper challenging one tutorial assumption — the four papers form a coherent arc rather than four independent research directions.</p>
+
+<table>
+<thead>
+<tr><th>Direction</th><th>What it pushes on</th><th>Production-readiness today</th><th>Plausible bank-deployment horizon</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td>ULTRA / GAMMA</td>
+  <td>Cross-schema reasoning, inductive link prediction</td>
+  <td>Working code, public checkpoints, some PoC deployments</td>
+  <td>1-2 years for M&A integration; 2-3 years for missing-link prediction as a flagged-for-review trigger</td>
+</tr>
+<tr>
+  <td>TIE / temporal KG embeddings</td>
+  <td>Bi-temporal reasoning, incremental updates without forgetting</td>
+  <td>Working code; production approximations (bi-temporal schema + hand-written queries) common today</td>
+  <td>The schema-level approximation is already production; the embedding-level mechanism is 2-4 years out</td>
+</tr>
+<tr>
+  <td>KumoRFM-class relational FMs</td>
+  <td>Eliminating the KG construction step entirely</td>
+  <td>Commercially available; production friction in regulated domains is real</td>
+  <td>2-3 years as a triage layer; 5+ years before it replaces Gen 3 in regulated decisions, if ever</td>
+</tr>
+</tbody>
+</table>
+
+<p>None of these horizons is short. None is "next quarter." The reason the frontier is worth understanding is not to deploy it imminently, but to make architectural decisions today that won't have to be unwound when the frontier lands.</p>
+
+<p>Three architectural choices, made today, that the frontier will reward:</p>
+
+<ul>
+  <li><strong>Bi-temporal schema from day one.</strong> Add <code>effective_from</code> / <code>effective_to</code> / <code>known_from</code> / <code>known_until</code> to every edge that can change. Querying through them is more work now; you'll thank yourself when TIE-class methods are deployable.</li>
+  <li><strong>Keep the relational tables alongside the KG.</strong> Don't treat the KG as a replacement for the relational substrate. The KG is a derived view; the tables are the source. When KumoRFM-class methods land, you have the substrate ready.</li>
+  <li><strong>Engineer the agent for tool extension, not algorithmic depth.</strong> The Gen 3 agent's competence is the tool catalogue (Hour 8). When better scoring (ULTRA) or better predictions (KumoRFM) become available, you wrap them as tools. The agent remains the orchestrator.</li>
+</ul>
+
+<!-- ===================================================================== -->
+<h2 id="same">8. What stays the same</h2>
+
+<p>It is tempting, reading frontier papers, to conclude that everything you just learned is provisional. It is not. The principles transfer.</p>
+
+<ul>
+  <li><strong>The three failure classes</strong> (Hour 1) — closed-world ignorance, disconnected facts, no verification — remain the taxonomy for evaluating any retrieval system, including foundation-model-based ones.</li>
+  <li><strong>Entity resolution</strong> (Hour 5) is the load-bearing engineering problem in every architecture. ULTRA still needs canonical IDs across graphs. KumoRFM still needs clean joins across tables. Even a perfect model fails on dirty resolution.</li>
+  <li><strong>Provenance and citations</strong> (Hour 11) are first-class outputs for regulated domains. Foundation models that don't produce them are not deployable in regulated decisions — full stop.</li>
+  <li><strong>The router</strong> (Hour 12) keeps mattering. The dimensions multiply (now Gen 1 / Gen 2 / Gen 3 / relational-FM / hand-coded-tool) but the routing question — which mode for which query class — is the same.</li>
+  <li><strong>Governance</strong> (Hour 12's checklist) is invariant. Explainability, reproducibility, audit trail, model versioning, data lineage, HITL gates, bias monitoring, list freshness, tool-failure handling, cost guardrails — none of these change because the model changed.</li>
+</ul>
+
+<p>The principles are the durable artefact. The papers describe better ways to satisfy them. Don't confuse the two.</p>
+
+<!-- ===================================================================== -->
+<h2 id="decision">9. A decision framework</h2>
+
+<p>When somebody pitches you a project to deploy one of these papers, the answer is rarely "yes" or "no." It is "for which queries, in which deployment shape, against what we have today?" Three axes to grade against:</p>
+
+<table>
+<thead>
+<tr><th>Axis</th><th>What you're asking</th><th>What says yes</th><th>What says no</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Query class fit</strong></td>
+  <td>Does this method excel at a query class your platform actually handles?</td>
+  <td>Multi-hop, cross-schema, point-in-time, high-throughput triage</td>
+  <td>Policy lookup (use Gen 1); calibrated tool-shape (use a tool)</td>
+</tr>
+<tr>
+  <td><strong>Defensibility</strong></td>
+  <td>Can the method produce an audit-grade output for this query class?</td>
+  <td>Used as scoring/triage with the audit layer downstream</td>
+  <td>Used as the sole decision layer for regulated outcomes</td>
+</tr>
+<tr>
+  <td><strong>Operational readiness</strong></td>
+  <td>Is the method's tooling, monitoring, and failure-mode story production-grade?</td>
+  <td>Established public implementations, monitoring patterns, vendor support</td>
+  <td>Research-grade only; you'd be the first regulated bank to deploy it</td>
+</tr>
+</tbody>
+</table>
+
+<p>A method is deployable when all three axes say yes. Most pitches founder on (b) — vendors over-claim defensibility; regulators correctly under-buy it. Holding the line on (b) is most of the discipline.</p>
+
+<!-- ===================================================================== -->
+<h2 id="reading-order">10. Reading order by question</h2>
+
+<p>The four papers are not a sequence. Read them in the order driven by your specific question.</p>
+
+<dl class="glossary">
+<dt>"How do we handle a new acquired customer KG without a schema-mapping project?"</dt>
+<dd>Start with <strong>ULTRA</strong>; follow with <strong>GAMMA</strong> for the methodological depth.</dd>
+
+<dt>"How do we answer point-in-time audit questions cleanly?"</dt>
+<dd>Start with <strong>TIE</strong>. The schema-level approximation (bi-temporal properties) lands first; the embedding-level mechanism follows.</dd>
+
+<dt>"Can we predict which UBO declarations are likely incomplete?"</dt>
+<dd>Start with <strong>ULTRA</strong>; this is a classical link-prediction problem its mechanism solves.</dd>
+
+<dt>"Could we skip KG construction entirely for some query classes?"</dt>
+<dd>Start with <strong>KumoRFM</strong>. Read it as a triage-layer architecture, not as a Gen 3 replacement.</dd>
+
+<dt>"What is the most likely architecture for an enterprise control-management platform in 2030?"</dt>
+<dd>Read all four, in this order: TIE (the schema-level approximation is already production), KumoRFM (the architectural shift), ULTRA + GAMMA (the cross-schema reasoning layer).</dd>
+</dl>
+
+<!-- ===================================================================== -->
+<h2 id="glossary">11. Glossary</h2>
+
+<dl class="glossary">
+<dt>Bi-temporal modelling</dt>
+<dd>The discipline of modelling each fact with two time dimensions: the time the fact was true in the world (valid time), and the time the system knew about it (transaction time). The schema-level approximation is property-based; the embedding-level mechanism is what TIE-class methods aim for.</dd>
+
+<dt>Catastrophic forgetting</dt>
+<dd>The pathology where a model trained incrementally on new data loses its accuracy on old data. The reason naive nightly retraining is unsafe for KGs that need to retain historical reasoning.</dd>
+
+<dt>Foundation model</dt>
+<dd>A model pre-trained on broad data such that it can be adapted to many downstream tasks without re-training from scratch. ULTRA is a foundation model for KGs; KumoRFM is a foundation model for relational data.</dd>
+
+<dt>In-context learning (ICL)</dt>
+<dd>A foundation model's ability to learn a task from a few labelled examples included in the prompt at inference time, without weight updates. Brown et al. (GPT-3) popularised the term; KumoRFM extends it to relational data.</dd>
+
+<dt>Inductive vs transductive reasoning</dt>
+<dd>A transductive model reasons over the same entities and relations it was trained on. An inductive model generalises to entities and relations it has never seen. ULTRA is fully inductive over both entities and relations; this is rare and structurally important.</dd>
+
+<dt>Intransigence</dt>
+<dd>TIE's metric: a model's tendency to over-preserve old knowledge at the expense of incorporating new. The dual problem to catastrophic forgetting.</dd>
+
+<dt>Link prediction</dt>
+<dd>Given a partial KG, predict the existence and likelihood of a missing edge. The canonical KG reasoning task. ULTRA and GAMMA are both evaluated primarily on link prediction.</dd>
+
+<dt>Relational interaction graph</dt>
+<dd>ULTRA's representation: a graph whose nodes are <em>relations</em> in the underlying KG and whose edges encode meta-properties (which relations co-occur, compose, contradict). The mechanism by which ULTRA achieves inductive generalisation.</dd>
+
+<dt>Reification</dt>
+<dd>Promoting a relationship to a node so it can have its own attributes and connections. The classical workaround for binary-edge limitations. Hour 10 (hypergraphs) makes this explicit.</dd>
+
+<dt>Triage layer</dt>
+<dd>A high-throughput, low-cost layer in front of more expensive reasoning. The pattern this document proposes for deploying KumoRFM-class methods alongside a Gen 3 agent.</dd>
+
+<dt>Zero-shot</dt>
+<dd>A model's ability to perform a task without having seen any labelled examples for it. ULTRA does zero-shot link prediction on unseen KGs; KumoRFM does zero-shot (or near-zero-shot) prediction over unseen relational schemas.</dd>
+</dl>
+
+<hr />
+
+<p class="meta">Return to this document any time a vendor pitches you on a research-frontier method. The decision framework in §9 is what tells you whether the pitch is real engineering or marketing — and which architectural axis it is actually moving on. The reading-order index in §10 is what tells you what to put in front of your team next.</p>
+
+</body>
+</html>
